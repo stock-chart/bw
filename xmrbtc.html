@@ -324,35 +324,87 @@
                 </div></div>
 
 
-<div id="loading"><div class="inner"><div class="text">Loading...</div></div></div>
-<div id="notify" class="notify"><div class="inner"></div></div>
-<div id="main">
-	<div id="leftbar_outer"><div id="leftbar">
-		<div class="gg160x600"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- bitcoinwisdom-l-dark -->
-		<ins class="adsbygoogle"
-			 style="display:inline-block;width:160px;height:600px"
-			 data-ad-client="ca-pub-5531473239083043"
-			 data-ad-slot="2981957558"></ins>
+      <!-- loading -->
+      <div id="loading">
+        <div class="inner">
+          <div class="text">正在加载...</div>
+        </div>
+      </div>
+      <!-- /loading -->
 
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script></div>
-	</div></div>
-	<div id="sidebar_outer"><div id="sidebar">
-		<div id="before_trades">
-			<div id="market"><a href="https://poloniex.com/exchange/btc_xmr" target="bwMarket" title="Poloniex XMR/BTC">Poloniex XMR/BTC</a></div>
-			<div id="orderbook"><div class="orderbook"><div id="asks"><div class="table"></div></div><div id="gasks"><div class="table"></div></div></div><div id="price" class="red">
-0.0129</div><div class="orderbook"><div id="bids"><div class="table"></div></div><div id="gbids"><div class="table"></div></div></div></div>
-		</div>
+      <!-- notify -->
+      <div id="notify" class="notify">
+        <div class="inner"></div>
+      </div>
+      <!-- notify -->
 
-		<div id="trades"></div>
-	</div></div>
-	<div id="wrapper" class="hide_cursor"><canvas id="canvas_main"></canvas><canvas id="canvas_shapes" class="ab"></canvas><div id="chart_info"></div>
-<div id="indicator_info"></div>
-<div id="main_indicator_info"></div>
-<canvas id="canvas_cross" class="ab"></canvas></div>
-</div>
+      <!-- main -->
+      <div id="main">
+        <div id="leftbar_outer">
+          <div id="leftbar">
+            <div class="gg160x600">
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-5531473239083043" data-ad-slot="2981957558"></ins>
+              <script>;(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+          </div>
+        </div>
+
+        <!-- sidebar_outer -->
+        <div id="sidebar_outer">
+          <div id="sidebar">
+
+            <!-- before_trades -->
+            <div id="before_trades">
+
+              <div id="market">
+                <a href="https://poloniex.com/exchange/btc_xmr" target="bwMarket" title="Poloniex XMR/BTC">Poloniex XMR/BTC</a>
+              </div>
+
+              <!-- orderbook -->
+              <div id="orderbook">
+                <div class="orderbook">
+                  <div id="asks">
+                    <div class="table"></div>
+                  </div>
+                  <div id="gasks">
+                    <div class="table"></div>
+                  </div>
+                </div>
+                <div id="price" class="red">0.0129</div>
+                <div class="orderbook">
+                  <div id="bids">
+                    <div class="table"></div>
+                  </div>
+                  <div id="gbids">
+                    <div class="table"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- orderbook -->
+
+            </div>
+            <!-- /before_trades -->
+
+            <div id="trades"></div>
+
+          </div>
+        </div>
+        <!-- sidebar_outer -->
+
+        <!-- wrapper -->
+        <div id="wrapper" class="hide_cursor">
+          <canvas id="canvas_main"></canvas>
+          <canvas id="canvas_shapes" class="ab"></canvas>
+          <div id="chart_info"></div>
+          <div id="indicator_info"></div>
+          <div id="main_indicator_info"></div>
+          <canvas id="canvas_cross" class="ab"></canvas>
+        </div>
+        <!-- wrapper -->
+
+      </div>
+      <!-- /main -->
 
 
     <script type="text/javascript">
@@ -404,7 +456,7 @@
       window.$init_price = 0.0129;
       setTimeout(function() {
         if (!window.$script_loaded) {
-          return document.getElementById('loading').innerHTML = "<div class=inner>Loading scripts, it will take several seconds.</div>";
+          return document.getElementById('loading').innerHTML = "<div class='inner'>加载资源, 可能需要几秒种时间.</div>";
         }
       }, 1000);
     }).call(this);
