@@ -218,110 +218,216 @@
         <div id="control">
           <div class="inner">
             <ul id="periods" class="horiz">
-              <li style='line-height:26px'>Time Interval:</li><li class="period"><a>1w</a></li><li class="subsep"></li><li class="period"><a>3d</a></li><li class="period"><a>1d</a></li><li class="subsep"></li><li class="period"><a>12h</a></li><li class="period"><a>6h</a></li><li class="period"><a>4h</a></li><li class="period"><a>2h</a></li><li class="period"><a>1h</a></li><li class="subsep"></li><li class="period"><a>30m</a></li><li class="period"><a>15m</a></li><li class="period"><a>5m</a></li><li class="period"><a>3m</a></li><li class="period"><a>1m</a></li><li class="subsep"></li><li><div class="dropdown">
-                  <div class="t">
-                    SETTINGS<span class="caret"><i class="icon-caret-down"></i><i class="icon-caret-up"></i></span>
+              <li style='line-height:26px'>时间间隔:</li>
+              <li class="period"><a>1w</a></li>
+              <li class="subsep"></li>
+              <li class="period"><a>3d</a></li>
+              <li class="period"><a>1d</a></li>
+              <li class="subsep"></li>
+              <li class="period"><a>12h</a></li>
+              <li class="period"><a>6h</a></li>
+              <li class="period"><a>4h</a></li>
+              <li class="period"><a>2h</a></li>
+              <li class="period"><a>1h</a></li>
+              <li class="subsep"></li>
+              <li class="period"><a>30m</a></li>
+              <li class="period"><a>15m</a></li>
+              <li class="period"><a>5m</a></li>
+              <li class="period"><a>3m</a></li>
+              <li class="period"><a>1m</a></li>
+              <li class="subsep"></li>
+
+              <li>
+                <div class="dropdown">
+                  <div class="t">设置<span class="caret"><i class="icon-caret-down"></i><i class="icon-caret-up"></i></span></div>
+
+                  <div class="dropdown-data">
+                    <table class="nowrap simple conf">
+                      <tr class="o" o=main_lines>
+                        <td>Main Indicator</td>
+                        <td>
+                          <ul>
+                            <li class="v" v=mas default=yes>MA</li>
+                            <li class="v" v=emas>EMA</li>
+                            <li class="v" v=bbands>BBANDS</li>
+                            <li class="v" v=sar>SAR</li>
+                            <li class="v" v=none>None</li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr class="o" o=stick_style>
+                        <td>Chart Style</td>
+                        <td>
+                          <ul>
+                            <li class="v" v=candle_stick>CandleStick</li>
+                            <li class="v" v=candle_stick_hlc>CandleStickHLC</li>
+                            <li class="v" v=ohlc>OHLC</li>
+                            <li class="v" v=line>Line</li>
+                            <li class="v" v=line_o>Line-o</li>
+                            <li class="v" v=none>None</li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr class="o" o=line_style parents=stick_style:line_o|stick_style:line>
+                        <td>Line Style</td>
+                        <td>
+                          <ul>
+                            <li class="v" v=c>Close</li>
+                            <li class="v" v=m>Median Price</li>
+                            <li class="v" v=w>Volume Weighted</li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr class="o" o=indicator>
+                        <td>Indicator</td>
+                        <td>
+                          <ul>
+                            <li class="v" v=macd>MACD</li>
+                            <li class="v" v=kdj>KDJ</li>
+                            <li class="v" v=stoch_rsi>StochRSI</li>
+                            <li class="v" v=dmi>DMI</li>
+                            <li class="v" v=cmf>CMF</li>
+                            <li class="v" v=obv>OBV</li>
+                            <li class="v" v=rsi>RSI</li>
+                            <li class="v" v=bid_ratio>Bid Ratio</li>
+                            <li class="v" v=none default=yes>None</li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr class="o" o=scale>
+                        <td>Scale</td>
+                        <td>
+                          <ul>
+                            <li class="v" v=normal>Linear</li>
+                            <li class="v" v=logarithmic>Logarithmic</li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr class="o" o=depth_range>
+                        <td>Depth Range<abbr title="Show the depth hints until bid or ask is less or more than average order price n%">?</abbr></td>
+                        <td>
+                          <ul>
+                            <li class="v" v=p1>1%</li>
+                            <li class="v" v=p2 default=yes>2%</li>
+                            <li class="v" v=p5>5%</li>
+                            <li class="v" v=pmax>Max</li>
+                            <li class="v" v=none>None</li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr class="o" o=volume_currency>
+                        <td>Volume Currency</td>
+                        <td>
+                          <ul>
+                            <li class="v" v=base>Base</li>
+                            <li class="v" v=quote>Quote</li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr class="o" o=time_zone>
+                        <td>时区</td>
+                        <td>
+                          <ul>
+                            <li class="v" v=local>本地</li>
+                            <li class="v" v=utc>UTC</li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr class="o" o=chart_range>
+                        <td>Chart Range<abbr title="Limit chart&#039;s price range. It&#039;s helpful when extream long candlestick makes chart unreadable.">?</abbr></td>
+                        <td>
+                          <ul>
+                            <li class="v" v=auto default=yes>Auto</li>
+                            <li class="v" v=pmax>Max</li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr class="o" o=theme>
+                        <td>主题</td>
+                        <td>
+                          <ul>
+                            <li class="v" v=dark>暗色</li>
+                            <li class="v" v=light>亮色</li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td colspan=2><a id="btn_settings">Indicator Parameters</a></td>
+                      </tr>
+                    </table>
                   </div>
+                </div>
+              </li>
 
-                  <div class="dropdown-data"><table class="nowrap simple conf">
-                    <tr class="o" o=main_lines>
-                      <td>
-                Main Indicator			</td>
-                      <td><ul><li class="v" v=mas default=yes>MA</li><li class="v" v=emas>EMA</li><li class="v" v=bbands>BBANDS</li><li class="v" v=sar>SAR</li><li class="v" v=none>None</li></ul></td>
-                    </tr>
-                    <tr class="o" o=stick_style>
-                      <td>
-                Chart Style			</td>
-                      <td><ul><li class="v" v=candle_stick>CandleStick</li><li class="v" v=candle_stick_hlc>CandleStickHLC</li><li class="v" v=ohlc>OHLC</li><li class="v" v=line>Line</li><li class="v" v=line_o>Line-o</li><li class="v" v=none>None</li></ul></td>
-                    </tr>
-                    <tr class="o" o=line_style parents=stick_style:line_o|stick_style:line>
-                      <td>
-                Line Style			</td>
-                      <td><ul><li class="v" v=c>Close</li><li class="v" v=m>Median Price</li><li class="v" v=w>Volume Weighted</li></ul></td>
-                    </tr>
-                    <tr class="o" o=indicator>
-                      <td>
-                Indicator			</td>
-                      <td><ul><li class="v" v=macd>MACD</li><li class="v" v=kdj>KDJ</li><li class="v" v=stoch_rsi>StochRSI</li><li class="v" v=dmi>DMI</li><li class="v" v=cmf>CMF</li><li class="v" v=obv>OBV</li><li class="v" v=rsi>RSI</li><li class="v" v=bid_ratio>Bid Ratio</li><li class="v" v=none default=yes>None</li></ul></td>
-                    </tr>
-                    <tr class="o" o=scale>
-                      <td>
-                Scale			</td>
-                      <td><ul><li class="v" v=normal>Linear</li><li class="v" v=logarithmic>Logarithmic</li></ul></td>
-                    </tr>
-                    <tr class="o" o=depth_range>
-                      <td>
-                Depth Range				<abbr title="Show the depth hints until bid or ask is less or more than average order price n%">?</abbr>
-                      </td>
-                      <td><ul><li class="v" v=p1>1%</li><li class="v" v=p2 default=yes>2%</li><li class="v" v=p5>5%</li><li class="v" v=pmax>Max</li><li class="v" v=none>None</li></ul></td>
-                    </tr>
-                    <tr class="o" o=volume_currency>
-                      <td>
-                Volume Currency			</td>
-                      <td><ul><li class="v" v=base>Base</li><li class="v" v=quote>Quote</li></ul></td>
-                    </tr>
-                    <tr class="o" o=time_zone>
-                      <td>
-                Time Zone			</td>
-                      <td><ul><li class="v" v=local>Local</li><li class="v" v=utc>UTC</li></ul></td>
-                    </tr>
-                    <tr class="o" o=chart_range>
-                      <td>
-                Chart Range				<abbr title="Limit chart&#039;s price range. It&#039;s helpful when extream long candlestick makes chart unreadable.">?</abbr>
-                      </td>
-                      <td><ul><li class="v" v=auto default=yes>Auto</li><li class="v" v=pmax>Max</li></ul></td>
-                    </tr>
-                    <tr class="o" o=theme>
-                      <td>
-                Theme			</td>
-                      <td><ul><li class="v" v=dark>Dark</li><li class="v" v=light>Light</li></ul></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td colspan=2><a id="btn_settings">Indicator Parameters</a></td>
-                    </tr>
-                  </table></div>
-                </div></li><li><div class="dropdown">
-                  <div class="t">
-                    TOOLS<span class="caret"><i class="icon-caret-down"></i><i class="icon-caret-up"></i></span>
+              <li>
+                <div class="dropdown">
+                  <div class="t">工具<span class="caret"><i class="icon-caret-down"></i><i class="icon-caret-up"></i></span></div>
+
+                  <div class="dropdown-data">
+                    <table class="nowrap simple">
+                      <tr>
+                        <td>
+                          <a class="link_estimate_trading">Estimate Trading</a><br />
+                          <a class="link_alarm">提醒</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="modes">
+                          <span>Draw Lines</span>
+                          -
+                          <a class="mode" mode=draw_line>Snap</a>
+                          <a class="mode" mode=draw_fline>Free</a><br />
+                          <a class="mode" mode=draw_fhline>Draw Fibonacci Retracements</a><br />
+                          <a class="mode" mode=draw_ffan>Draw Fibonacci Fans</a><br />
+                          <a class="mode" mode=draw_fhlineex>Draw Fibonacci Extensions</a><br />
+                          <div class="hint">Left Click - add point/line<br />Right Click - remove line</div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td id="drawing">
+                          <div class="unsel">
+                            <span>Drawing</span>
+                            <a id="drawing_new">新建</a>
+                            <a id="drawing_clone">复制</a>
+                            <a id="drawing_delete">删除</a>
+                            <a id="drawing_recover" style="display:none">撤销</a>
+                          </div>
+
+                          <div id="drawings" class="hint"></div>
+                        </td>
+                      </tr>
+                    </table>
                   </div>
+                </div>
+              </li>
 
-                  <div class="dropdown-data"><table class="nowrap simple">
-                    <tr><td>
-                      <a class="link_estimate_trading">Estimate Trading</a><br /><a class="link_alarm">Alarm</a>
-                    </td></tr>
-                    <tr><td class="modes">
-                      <span>Draw Lines</span>
-                      -
-                      <a class="mode" mode=draw_line>Snap</a>
-                      <a class="mode" mode=draw_fline>Free</a>
-                      <br /><a class="mode" mode=draw_fhline>Draw Fibonacci Retracements</a><br /><a class="mode" mode=draw_ffan>Draw Fibonacci Fans</a><br /><a class="mode" mode=draw_fhlineex>Draw Fibonacci Extensions</a><br />
-                      <div class="hint">
-                        Left Click - add point/line<br />Right Click - remove line
-                      </div>
-                    </td></tr>
-                    <tr><td id="drawing">
-                      <div class="unsel">
-                        <span>Drawing</span>
-                        <a id="drawing_new">New</a>
-                        <a id="drawing_clone">Clone</a>
-                        <a id="drawing_delete">Delete</a>
-                        <a id="drawing_recover" style="display:none">Recover</a>
-                      </div>
+              <li class="sep"></li>
+              <li id="mode">
+                <a id="mode_cross" class="mode selected" title='Cross Cursor' mode=cross>
+                  <img src=/img/shape-cross.png />
+                </a>
+                <a id="mode_draw_line" class="mode" title='Draw lines' mode=draw_line>
+                  <img src=/img/shape-line.png />
+                </a>
+                <a id="mode_draw_fhline" class="mode" title='Draw Fibonacci Retracements' mode=draw_fhline>
+                  <img src=/img/shape-fr.png />
+                </a>
+                <a id="mode_draw_ffan" class="mode" title='Draw Fibonacci Fans' mode=draw_ffan>
+                  <img src=/img/shape-ffan.png />
+                </a>
+                <span id="drawing_status"></span>
+              </li>
+              <li class="sep"></li>
+              <li><a class="link_alarm"><i class="icon-bell"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- /control -->
 
-                      <div id="drawings" class="hint"></div>
-                    </td></tr>
-                  </table></div>
-                </div></li>
-
-
-
-                <li class="sep"></li><li id="mode">
-                  <a id="mode_cross" class="mode selected" title='Cross Cursor' mode=cross><img src=/img/shape-cross.png /></a><a id="mode_draw_line" class="mode" title='Draw lines' mode=draw_line><img src=/img/shape-line.png /></a><a id="mode_draw_fhline" class="mode" title='Draw Fibonacci Retracements' mode=draw_fhline><img src=/img/shape-fr.png /></a><a id="mode_draw_ffan" class="mode" title='Draw Fibonacci Fans' mode=draw_ffan><img src=/img/shape-ffan.png /></a>
-                  <span id="drawing_status"></span>
-                </li><li class="sep"></li><li><a class="link_alarm"><i class="icon-bell"></i></a></li>
-                </ul></div></div>
-                </div></div>
+      </div>
+    </div>
+    <!-- /header-outer -->
 
 
       <!-- loading -->
@@ -342,7 +448,7 @@
       <div id="main">
 
         <!-- leftbar_outer -->
-        <div id="leftbar_outer" style="visibility: hidden;">
+        <div id="leftbar_outer" style="">
           <div id="leftbar">
             <div class="gg160x600">
               <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -408,7 +514,6 @@
 
       </div>
       <!-- /main -->
-
 
     <script type="text/javascript">
       ;(function() {
