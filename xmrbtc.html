@@ -25,234 +25,303 @@
 
               <div id="warning"></div>
 
-              <ul class="nav"><li class="logo"><a href=/><b>BitcoinWisdom</b></a></li><li class="ticker">
-            <a href=/markets/bitstamp/btcusd class=symbol_bitstampbtcusd title="Bitstamp BTC/USD Charts"><b>Bitstamp</b></a>
-            <span id=market_bitstampbtcusd>1006.86</span>
-          </li><li class="ticker">
-            <a href=/markets/btce/btcusd class=symbol_btcebtcusd title="BTC-e BTC/USD Charts"><b>BTC-e</b></a>
-            <span id=market_btcebtcusd>996.999</span>
-          </li><li class="ticker">
-            <a href=/markets/bitfinex/btcusd class=symbol_bitfinexbtcusd title="Bitfinex BTC/USD Charts"><b>Bitfinex</b></a>
-            <span id=market_bitfinexbtcusd>1006.4</span>
-          </li><li class="ticker">
-            <a href=/markets/okcoin/btccny class=symbol_okcoinbtccny title="OKCoin BTC/CNY Charts"><b>OKCoin</b></a>
-            <span id=market_okcoinbtccny><span class="eprice">988.38/</span>6785</span>
-          </li><li class="ticker">
-            <a href=/markets/btce/ltcusd class=symbol_btceltcusd title="BTC-e LTC/USD Charts"><b>LTC/USD</b></a>
-            <span id=market_btceltcusd>3.777294</span>
-          </li><li id="nav-charts">
-            <div class="dropdown">
-              <div class="t">
-                MARKETS<span class="caret"><i class="icon-caret-down"></i><i class="icon-caret-up"></i></span>
-              </div>
+              <!-- nav -->
+              <ul class="nav">
+                <li class="logo"><a href=/><b>区块链123</b></a></li>
+                <li class="ticker">
+                  <a href=/markets/bitstamp/btcusd class=symbol_bitstampbtcusd title="Bitstamp BTC/USD Charts"><b>Bitstamp</b></a>
+                  <span id=market_bitstampbtcusd>1006.86</span>
+                </li>
+                <li class="ticker">
+                  <a href=/markets/btce/btcusd class=symbol_btcebtcusd title="BTC-e BTC/USD Charts"><b>BTC-e</b></a>
+                  <span id=market_btcebtcusd>996.999</span>
+                </li>
+                <li class="ticker">
+                  <a href=/markets/bitfinex/btcusd class=symbol_bitfinexbtcusd title="Bitfinex BTC/USD Charts"><b>Bitfinex</b></a>
+                  <span id=market_bitfinexbtcusd>1006.4</span>
+                </li>
+                <li class="ticker">
+                  <a href=/markets/okcoin/btccny class=symbol_okcoinbtccny title="OKCoin BTC/CNY Charts"><b>OKCoin</b></a>
+                  <span id=market_okcoinbtccny><span class="eprice">988.38/</span>6785</span>
+                </li>
+                <li class="ticker">
+                  <a href=/markets/btce/ltcusd class=symbol_btceltcusd title="BTC-e LTC/USD Charts"><b>LTC/USD</b></a>
+                  <span id=market_btceltcusd>3.777294</span>
+                </li>
+                <li id="nav-charts">
+                  <div class="dropdown">
+                    <div class="t">市场<span class="caret"><i class="icon-caret-down"></i><i class="icon-caret-up"></i></span></div>
+                    <div class="dropdown-data">
+                      <table class="nowrap simple nav-markets">
+                        <tr>
+                          <td><a href=https://btc-e.com target='_blank' title="BTC-e">BTC-e</a></td>
+                          <td>
+                            <a href=/markets/btce/btcusd class=symbol_btcebtcusd title="BTC-e BTC/USD Charts">BTC/USD</a>
+                            <a href=/markets/btce/btceur class=symbol_btcebtceur title="BTC-e BTC/EUR Charts">BTC/EUR</a>
+                            <a href=/markets/btce/btcrur class=symbol_btcebtcrur title="BTC-e BTC/RUR Charts">BTC/RUR</a>
+                            <a href=/markets/btce/btccnh class=symbol_btcebtccnh title="BTC-e BTC/CNH Charts">BTC/CNH</a><br />
+                            <a href=/markets/btce/ltcusd class=symbol_btceltcusd title="BTC-e LTC/USD Charts">LTC/USD</a>
+                            <a href=/markets/btce/ltceur class=symbol_btceltceur title="BTC-e LTC/EUR Charts">LTC/EUR</a>
+                            <a href=/markets/btce/ltcrur class=symbol_btceltcrur title="BTC-e LTC/RUR Charts">LTC/RUR</a>
+                            <a href=/markets/btce/ltccnh class=symbol_btceltccnh title="BTC-e LTC/CNH Charts">LTC/CNH</a>
+                            <a href=/markets/btce/ltcbtc class=symbol_btceltcbtc title="BTC-e LTC/BTC Charts">LTC/BTC</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href=https://bitstamp.net target='_blank' title="Bitstamp">Bitstamp</a></td>
+                          <td>
+                            <a href=/markets/bitstamp/btcusd class=symbol_bitstampbtcusd title="Bitstamp BTC/USD Charts">BTC/USD</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href=https://btcchina.com target='_blank' title="BTCChina">BTCChina</a></td>
+                          <td>
+                            <a href=/markets/btcchina/btccny class=symbol_btcchinabtccny title="BTCChina BTC/CNY Charts">BTC/CNY</a>
+                            <a href=/markets/btcchina/ltccny class=symbol_btcchinaltccny title="BTCChina LTC/CNY Charts">LTC/CNY</a>
+                            <a href=/markets/btcchina/ltcbtc class=symbol_btcchinaltcbtc title="BTCChina LTC/BTC Charts">LTC/BTC</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href=https://www.quadrigacx.com target='_blank' title="QuadrigaCX">QuadrigaCX</a></td>
+                          <td>
+                            <a href=/markets/quadrigacx/btccad class=symbol_quadrigacxbtccad title="QuadrigaCX BTC/CAD Charts">BTC/CAD</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href=https://bitcoin.de target='_blank' title="Bitcoin.de">Bitcoin.de</a></td>
+                          <td>
+                            <a href=/markets/bitcoinde/btceur class=symbol_bitcoindebtceur title="Bitcoin.de BTC/EUR Charts">BTC/EUR</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href=https://coinbase.com/buys target='_blank' title="Coinbase">Coinbase</a></td>
+                          <td><a href=/markets/coinbase/btcusd class=symbol_coinbasebtcusd title="Coinbase BTC/USD Charts">BTC/USD</a></td>
+                        </tr>
+                        <tr>
+                          <td><a href=https://www.huobi.com target='_blank' title="Huobi">Huobi</a></td>
+                          <td>
+                            <a href=/markets/huobi/btccny class=symbol_huobibtccny title="Huobi BTC/CNY Charts">BTC/CNY</a>
+                            <a href=/markets/huobi/ltccny class=symbol_huobiltccny title="Huobi LTC/CNY Charts">LTC/CNY</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href=https://www.okcoin.com target='_blank' title="OKCoin">OKCoin</a></td>
+                          <td>
+                            <a href=/markets/okcoin/btccny class=symbol_okcoinbtccny title="OKCoin BTC/CNY Charts">BTC/CNY</a>
+                            <a href=/markets/okcoin/ltccny class=symbol_okcoinltccny title="OKCoin LTC/CNY Charts">LTC/CNY</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href=https://www.kraken.com target='_blank' title="Kraken">Kraken</a></td>
+                          <td>
+                            <a href=/markets/kraken/btceur class=symbol_krakenbtceur title="Kraken BTC/EUR Charts">BTC/EUR</a>
+                            <a href=/markets/kraken/ltceur class=symbol_krakenltceur title="Kraken LTC/EUR Charts">LTC/EUR</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href=https://www.bitfinex.com target='_blank' title="Bitfinex">Bitfinex</a></td>
+                          <td>
+                            <a href=/markets/bitfinex/btcusd class=symbol_bitfinexbtcusd title="Bitfinex BTC/USD Charts">BTC/USD</a>
+                            <a href=/markets/bitfinex/ltcusd class=symbol_bitfinexltcusd title="Bitfinex LTC/USD Charts">LTC/USD</a>
+                            <a href=/markets/bitfinex/ltcbtc class=symbol_bitfinexltcbtc title="Bitfinex LTC/BTC Charts">LTC/BTC</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href=https://796.com target='_blank' title="796">796</a></td>
+                          <td>
+                            <a href=/markets/796/btcfut class=symbol_f796btcfut title="796 Bitcoin Futures Charts">BTC.FUT</a>
+                            <a href=/markets/796/ltcfut class=symbol_f796ltcfut title="796 Litecoin Futures Charts">LTC.FUT</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href=https://www.bitvc.com target='_blank' title="BitVC">BitVC</a></td>
+                          <td>
+                            <a href=/markets/bitvc/btcfut class=symbol_bitvcbtcfut title="BitVC Bitcoin Futures Charts">BTC.FUT</a>
+                            <a href=/markets/bitvc/ltcfut class=symbol_bitvcltcfut title="BitVC Litecoin Futures Charts">LTC.FUT</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href='https://btc-e.com'>BTC-e</a></td>
+                          <td>
+                            <a href=/markets/btce/ppcusd class=symbol_btceppcusd title="BTC-e PPC/USD Charts">PPC/USD</a>
+                            <a href=/markets/btce/ppcbtc class=symbol_btceppcbtc title="BTC-e PPC/BTC Charts">PPC/BTC</a>
+                            <a href=/markets/btce/nmcusd class=symbol_btcenmcusd title="BTC-e NMC/USD Charts">NMC/USD</a>
+                            <a href=/markets/btce/nmcbtc class=symbol_btcenmcbtc title="BTC-e NMC/BTC Charts">NMC/BTC</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a class="grey" href='https://mtgox.com'>Mt.Gox</a></td>
+                          <td>
+                            <a class="grey" href=/markets/mtgox/btcusd class=symbol_mtgoxbtcusd title="Mt.Gox BTC/USD Charts">BTC/USD</a>
+                            <a class="grey" href=/markets/mtgox/btceur class=symbol_mtgoxbtceur title="Mt.Gox BTC/EUR Charts">BTC/EUR</a>
+                            <a class="grey" href=/markets/mtgox/btcgbp class=symbol_mtgoxbtcgbp title="Mt.Gox BTC/GBP Charts">BTC/GBP</a>
+                            <a class="grey" href=/markets/mtgox/btcaud class=symbol_mtgoxbtcaud title="Mt.Gox BTC/AUD Charts">BTC/AUD</a>
+                            <a class="grey" href=/markets/mtgox/btcjpy class=symbol_mtgoxbtcjpy title="Mt.Gox BTC/JPY Charts">BTC/JPY</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href=/bitcoin/difficulty target=bw_difficulty>Difficulty</a></td>
+                          <td>
+                            <a href=/bitcoin/difficulty target=bw_difficulty>Bitcoin</a>
+                            <a href=/litecoin/difficulty target=bw_difficulty>Litecoin</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
 
-              <div class="dropdown-data"><table class="nowrap simple nav-markets">
-                <tr>
-                  <td><a href=https://btc-e.com target='_blank' title="BTC-e">BTC-e</a></td>
-                  <td><a href=/markets/btce/btcusd class=symbol_btcebtcusd title="BTC-e BTC/USD Charts">BTC/USD</a><a href=/markets/btce/btceur class=symbol_btcebtceur title="BTC-e BTC/EUR Charts">BTC/EUR</a><a href=/markets/btce/btcrur class=symbol_btcebtcrur title="BTC-e BTC/RUR Charts">BTC/RUR</a><a href=/markets/btce/btccnh class=symbol_btcebtccnh title="BTC-e BTC/CNH Charts">BTC/CNH</a><br /><a href=/markets/btce/ltcusd class=symbol_btceltcusd title="BTC-e LTC/USD Charts">LTC/USD</a><a href=/markets/btce/ltceur class=symbol_btceltceur title="BTC-e LTC/EUR Charts">LTC/EUR</a><a href=/markets/btce/ltcrur class=symbol_btceltcrur title="BTC-e LTC/RUR Charts">LTC/RUR</a><a href=/markets/btce/ltccnh class=symbol_btceltccnh title="BTC-e LTC/CNH Charts">LTC/CNH</a><a href=/markets/btce/ltcbtc class=symbol_btceltcbtc title="BTC-e LTC/BTC Charts">LTC/BTC</a></td>
-                </tr>
-                <tr>
-                  <td><a href=https://bitstamp.net target='_blank' title="Bitstamp">Bitstamp</a></td>
-                  <td><a href=/markets/bitstamp/btcusd class=symbol_bitstampbtcusd title="Bitstamp BTC/USD Charts">BTC/USD</a></td>
-                </tr>
-                <tr>
-                  <td><a href=https://btcchina.com target='_blank' title="BTCChina">BTCChina</a></td>
-                  <td><a href=/markets/btcchina/btccny class=symbol_btcchinabtccny title="BTCChina BTC/CNY Charts">BTC/CNY</a><a href=/markets/btcchina/ltccny class=symbol_btcchinaltccny title="BTCChina LTC/CNY Charts">LTC/CNY</a><a href=/markets/btcchina/ltcbtc class=symbol_btcchinaltcbtc title="BTCChina LTC/BTC Charts">LTC/BTC</a></td>
-                </tr>
-                <tr>
-                  <td><a href=https://www.quadrigacx.com target='_blank' title="QuadrigaCX">QuadrigaCX</a></td>
-                  <td><a href=/markets/quadrigacx/btccad class=symbol_quadrigacxbtccad title="QuadrigaCX BTC/CAD Charts">BTC/CAD</a></td>
-                </tr>
-                <tr>
-                  <td><a href=https://bitcoin.de target='_blank' title="Bitcoin.de">Bitcoin.de</a></td>
-                  <td><a href=/markets/bitcoinde/btceur class=symbol_bitcoindebtceur title="Bitcoin.de BTC/EUR Charts">BTC/EUR</a></td>
-                </tr>
-                <tr>
-                  <td><a href=https://coinbase.com/buys target='_blank' title="Coinbase">Coinbase</a></td>
-                  <td><a href=/markets/coinbase/btcusd class=symbol_coinbasebtcusd title="Coinbase BTC/USD Charts">BTC/USD</a></td>
-                </tr>
-                <tr>
-                  <td><a href=https://www.huobi.com target='_blank' title="Huobi">Huobi</a></td>
-                  <td><a href=/markets/huobi/btccny class=symbol_huobibtccny title="Huobi BTC/CNY Charts">BTC/CNY</a><a href=/markets/huobi/ltccny class=symbol_huobiltccny title="Huobi LTC/CNY Charts">LTC/CNY</a></td>
-                </tr>
-                <tr>
-                  <td><a href=https://www.okcoin.com target='_blank' title="OKCoin">OKCoin</a></td>
-                  <td><a href=/markets/okcoin/btccny class=symbol_okcoinbtccny title="OKCoin BTC/CNY Charts">BTC/CNY</a><a href=/markets/okcoin/ltccny class=symbol_okcoinltccny title="OKCoin LTC/CNY Charts">LTC/CNY</a></td>
-                </tr>
-                <tr>
-                  <td><a href=https://www.kraken.com target='_blank' title="Kraken">Kraken</a></td>
-                  <td><a href=/markets/kraken/btceur class=symbol_krakenbtceur title="Kraken BTC/EUR Charts">BTC/EUR</a><a href=/markets/kraken/ltceur class=symbol_krakenltceur title="Kraken LTC/EUR Charts">LTC/EUR</a></td>
-                </tr>
-                <tr>
-                  <td><a href=https://www.bitfinex.com target='_blank' title="Bitfinex">Bitfinex</a></td>
-                  <td><a href=/markets/bitfinex/btcusd class=symbol_bitfinexbtcusd title="Bitfinex BTC/USD Charts">BTC/USD</a><a href=/markets/bitfinex/ltcusd class=symbol_bitfinexltcusd title="Bitfinex LTC/USD Charts">LTC/USD</a><a href=/markets/bitfinex/ltcbtc class=symbol_bitfinexltcbtc title="Bitfinex LTC/BTC Charts">LTC/BTC</a></td>
-                </tr>
-                <tr>
-                  <td><a href=https://796.com target='_blank' title="796">796</a></td>
-                  <td><a href=/markets/796/btcfut class=symbol_f796btcfut title="796 Bitcoin Futures Charts">BTC.FUT</a><a href=/markets/796/ltcfut class=symbol_f796ltcfut title="796 Litecoin Futures Charts">LTC.FUT</a></td>
-                </tr>
-                <tr>
-                  <td><a href=https://www.bitvc.com target='_blank' title="BitVC">BitVC</a></td>
-                  <td><a href=/markets/bitvc/btcfut class=symbol_bitvcbtcfut title="BitVC Bitcoin Futures Charts">BTC.FUT</a><a href=/markets/bitvc/ltcfut class=symbol_bitvcltcfut title="BitVC Litecoin Futures Charts">LTC.FUT</a></td>
-                </tr>
-                <tr>
-                  <td><a href='https://btc-e.com'>BTC-e</a></td>
-                  <td><a href=/markets/btce/ppcusd class=symbol_btceppcusd title="BTC-e PPC/USD Charts">PPC/USD</a><a href=/markets/btce/ppcbtc class=symbol_btceppcbtc title="BTC-e PPC/BTC Charts">PPC/BTC</a><a href=/markets/btce/nmcusd class=symbol_btcenmcusd title="BTC-e NMC/USD Charts">NMC/USD</a><a href=/markets/btce/nmcbtc class=symbol_btcenmcbtc title="BTC-e NMC/BTC Charts">NMC/BTC</a></td>
-                </tr>
-                <tr>
-                  <td><a class="grey" href='https://mtgox.com'>Mt.Gox</a></td>
-                  <td><a class="grey" href=/markets/mtgox/btcusd class=symbol_mtgoxbtcusd title="Mt.Gox BTC/USD Charts">BTC/USD</a><a class="grey" href=/markets/mtgox/btceur class=symbol_mtgoxbtceur title="Mt.Gox BTC/EUR Charts">BTC/EUR</a><a class="grey" href=/markets/mtgox/btcgbp class=symbol_mtgoxbtcgbp title="Mt.Gox BTC/GBP Charts">BTC/GBP</a><a class="grey" href=/markets/mtgox/btcaud class=symbol_mtgoxbtcaud title="Mt.Gox BTC/AUD Charts">BTC/AUD</a><a class="grey" href=/markets/mtgox/btcjpy class=symbol_mtgoxbtcjpy title="Mt.Gox BTC/JPY Charts">BTC/JPY</a></td>
-                </tr>
-                <tr>
-                  <td><a href=/bitcoin/difficulty target=bw_difficulty>Difficulty</a></td>
-                  <td>
-                    <a href=/bitcoin/difficulty target=bw_difficulty>Bitcoin</a><a href=/litecoin/difficulty target=bw_difficulty>Litecoin</a>
-                  </td>
-                </tr>
-              </table></div>
+                  <div class="dropdown">
+                    <div class="t">挖矿<span class="caret"><i class="icon-caret-down"></i><i class="icon-caret-up"></i></span></div>
+                    <div class="dropdown-data">
+                      <table class="nowrap simple">
+                        <tr><td><a href=/bitcoin/difficulty target=bw_difficulty title="比特币难度">比特币难度</a></td></tr>
+                        <tr><td><a href=/bitcoin/calculator target=bw_difficulty title="比特币挖矿计算器">比特币挖矿计算器</a></td></tr>
+                        <tr><td><a href=/litecoin/difficulty target=bw_difficulty title="莱特币难度">莱特币难度</a></td></tr>
+                        <tr><td><a href=/litecoin/calculator target=bw_difficulty title="莱特币挖矿计算器">莱特币挖矿计算器</a></td></tr>
+                      </table>
+                    </div>
+                  </div>
+                  <a class="link_login">登陆</a> 或 <a class="link_register">注册</a>
+                </li>
+              </ul>
+              <!-- /nav -->
+
             </div>
-            <div class="dropdown">
-              <div class="t">
-                MINING<span class="caret"><i class="icon-caret-down"></i><i class="icon-caret-up"></i></span>
-              </div>
-              <div class="dropdown-data"><table class="nowrap simple">
-                <tr><td><a href=/bitcoin/difficulty target=bw_difficulty title="Bitcoin Difficulty Chart">Bitcoin Difficulty Chart</a></td></tr>
-                <tr><td><a href=/bitcoin/calculator target=bw_difficulty title="Bitcoin Mining Calculator">Bitcoin Mining Calculator</a></td></tr>
-                <tr><td><a href=/litecoin/difficulty target=bw_difficulty title="Litecoin Difficulty Chart">Litecoin Difficulty Chart</a></td></tr>
-                <tr><td><a href=/litecoin/calculator target=bw_difficulty title="Litecoin Mining Calculator">Litecoin Mining Calculator</a></td></tr>
-              </table></div>
-            </div>
+          </div>
+        </div>
+        <!-- /navbar -->
 
-            <a class="link_login">Login</a>
-            or
-            <a class="link_register">Register</a>
-          </li></ul>
-            </div></div></div>
-
-            <div class="difficulty"><div class="inner">
-              <table cellspacing=0 cellpadding=0 border=0>
-                <tr>
-                  <td><b><a href=/bitcoin/difficulty target=bw_difficulty>Difficulty:</a></b></td>
-                  <td><span id="slot_difficulty">422,170,566,884</span></td>
-                </tr>
-                <tr>
-                  <td><b><a href=/bitcoin/difficulty target=bw_difficulty>Next:</a></b></td>
-                  <td><span id="slot_estimated">444,630,952,989</span></td>
-                </tr>
-                <tr>
-                  <td><b><a href=/bitcoin/difficulty target=bw_difficulty>Hash Rate:</a></b></td>
-                  <td><span id="slot_hash_rate">3,314,655,767 GH/s</span></td>
-                </tr>
-              </table>
-            </div></div>
-
-
-            <div id="qr"><img /></div>
-
-            <div id="control"><div class="inner"><ul id="periods" class="horiz"><li style='line-height:26px'>Time Interval:</li><li class="period"><a>1w</a></li><li class="subsep"></li><li class="period"><a>3d</a></li><li class="period"><a>1d</a></li><li class="subsep"></li><li class="period"><a>12h</a></li><li class="period"><a>6h</a></li><li class="period"><a>4h</a></li><li class="period"><a>2h</a></li><li class="period"><a>1h</a></li><li class="subsep"></li><li class="period"><a>30m</a></li><li class="period"><a>15m</a></li><li class="period"><a>5m</a></li><li class="period"><a>3m</a></li><li class="period"><a>1m</a></li><li class="subsep"></li><li><div class="dropdown">
-            <div class="t">
-              SETTINGS<span class="caret"><i class="icon-caret-down"></i><i class="icon-caret-up"></i></span>
-            </div>
-
-            <div class="dropdown-data"><table class="nowrap simple conf">
-              <tr class="o" o=main_lines>
-                <td>
-          Main Indicator			</td>
-                <td><ul><li class="v" v=mas default=yes>MA</li><li class="v" v=emas>EMA</li><li class="v" v=bbands>BBANDS</li><li class="v" v=sar>SAR</li><li class="v" v=none>None</li></ul></td>
-              </tr>
-              <tr class="o" o=stick_style>
-                <td>
-          Chart Style			</td>
-                <td><ul><li class="v" v=candle_stick>CandleStick</li><li class="v" v=candle_stick_hlc>CandleStickHLC</li><li class="v" v=ohlc>OHLC</li><li class="v" v=line>Line</li><li class="v" v=line_o>Line-o</li><li class="v" v=none>None</li></ul></td>
-              </tr>
-              <tr class="o" o=line_style parents=stick_style:line_o|stick_style:line>
-                <td>
-          Line Style			</td>
-                <td><ul><li class="v" v=c>Close</li><li class="v" v=m>Median Price</li><li class="v" v=w>Volume Weighted</li></ul></td>
-              </tr>
-              <tr class="o" o=indicator>
-                <td>
-          Indicator			</td>
-                <td><ul><li class="v" v=macd>MACD</li><li class="v" v=kdj>KDJ</li><li class="v" v=stoch_rsi>StochRSI</li><li class="v" v=dmi>DMI</li><li class="v" v=cmf>CMF</li><li class="v" v=obv>OBV</li><li class="v" v=rsi>RSI</li><li class="v" v=bid_ratio>Bid Ratio</li><li class="v" v=none default=yes>None</li></ul></td>
-              </tr>
-              <tr class="o" o=scale>
-                <td>
-          Scale			</td>
-                <td><ul><li class="v" v=normal>Linear</li><li class="v" v=logarithmic>Logarithmic</li></ul></td>
-              </tr>
-              <tr class="o" o=depth_range>
-                <td>
-          Depth Range				<abbr title="Show the depth hints until bid or ask is less or more than average order price n%">?</abbr>
-                </td>
-                <td><ul><li class="v" v=p1>1%</li><li class="v" v=p2 default=yes>2%</li><li class="v" v=p5>5%</li><li class="v" v=pmax>Max</li><li class="v" v=none>None</li></ul></td>
-              </tr>
-              <tr class="o" o=volume_currency>
-                <td>
-          Volume Currency			</td>
-                <td><ul><li class="v" v=base>Base</li><li class="v" v=quote>Quote</li></ul></td>
-              </tr>
-              <tr class="o" o=time_zone>
-                <td>
-          Time Zone			</td>
-                <td><ul><li class="v" v=local>Local</li><li class="v" v=utc>UTC</li></ul></td>
-              </tr>
-              <tr class="o" o=chart_range>
-                <td>
-          Chart Range				<abbr title="Limit chart&#039;s price range. It&#039;s helpful when extream long candlestick makes chart unreadable.">?</abbr>
-                </td>
-                <td><ul><li class="v" v=auto default=yes>Auto</li><li class="v" v=pmax>Max</li></ul></td>
-              </tr>
-              <tr class="o" o=theme>
-                <td>
-          Theme			</td>
-                <td><ul><li class="v" v=dark>Dark</li><li class="v" v=light>Light</li></ul></td>
+        <!-- difficulty -->
+        <div class="difficulty">
+          <div class="inner">
+            <table cellspacing=0 cellpadding=0 border=0>
+              <tr>
+                <td><b><a href=/bitcoin/difficulty target=bw_difficulty>难度:</a></b></td>
+                <td><span id="slot_difficulty">422,170,566,884</span></td>
               </tr>
               <tr>
-                <td></td>
-                <td colspan=2><a id="btn_settings">Indicator Parameters</a></td>
+                <td><b><a href=/bitcoin/difficulty target=bw_difficulty>下次难度:</a></b></td>
+                <td><span id="slot_estimated">444,630,952,989</span></td>
               </tr>
-            </table></div>
-          </div></li><li><div class="dropdown">
-            <div class="t">
-              TOOLS<span class="caret"><i class="icon-caret-down"></i><i class="icon-caret-up"></i></span>
-            </div>
+              <tr>
+                <td><b><a href=/bitcoin/difficulty target=bw_difficulty>Hash率:</a></b></td>
+                <td><span id="slot_hash_rate">3,314,655,767 GH/s</span></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <!-- /difficulty -->
 
-            <div class="dropdown-data"><table class="nowrap simple">
-              <tr><td>
-                <a class="link_estimate_trading">Estimate Trading</a><br /><a class="link_alarm">Alarm</a>
-              </td></tr>
-              <tr><td class="modes">
-                <span>Draw Lines</span>
-                -
-                <a class="mode" mode=draw_line>Snap</a>
-                <a class="mode" mode=draw_fline>Free</a>
-                <br /><a class="mode" mode=draw_fhline>Draw Fibonacci Retracements</a><br /><a class="mode" mode=draw_ffan>Draw Fibonacci Fans</a><br /><a class="mode" mode=draw_fhlineex>Draw Fibonacci Extensions</a><br />
-                <div class="hint">
-                  Left Click - add point/line<br />Right Click - remove line
-                </div>
-              </td></tr>
-              <tr><td id="drawing">
-                <div class="unsel">
-                  <span>Drawing</span>
-                  <a id="drawing_new">New</a>
-                  <a id="drawing_clone">Clone</a>
-                  <a id="drawing_delete">Delete</a>
-                  <a id="drawing_recover" style="display:none">Recover</a>
-                </div>
+        <div id="qr"><img /></div>
 
-                <div id="drawings" class="hint"></div>
-              </td></tr>
-            </table></div>
-          </div></li>
+        <!-- control -->
+        <div id="control">
+          <div class="inner">
+            <ul id="periods" class="horiz">
+              <li style='line-height:26px'>Time Interval:</li><li class="period"><a>1w</a></li><li class="subsep"></li><li class="period"><a>3d</a></li><li class="period"><a>1d</a></li><li class="subsep"></li><li class="period"><a>12h</a></li><li class="period"><a>6h</a></li><li class="period"><a>4h</a></li><li class="period"><a>2h</a></li><li class="period"><a>1h</a></li><li class="subsep"></li><li class="period"><a>30m</a></li><li class="period"><a>15m</a></li><li class="period"><a>5m</a></li><li class="period"><a>3m</a></li><li class="period"><a>1m</a></li><li class="subsep"></li><li><div class="dropdown">
+                  <div class="t">
+                    SETTINGS<span class="caret"><i class="icon-caret-down"></i><i class="icon-caret-up"></i></span>
+                  </div>
+
+                  <div class="dropdown-data"><table class="nowrap simple conf">
+                    <tr class="o" o=main_lines>
+                      <td>
+                Main Indicator			</td>
+                      <td><ul><li class="v" v=mas default=yes>MA</li><li class="v" v=emas>EMA</li><li class="v" v=bbands>BBANDS</li><li class="v" v=sar>SAR</li><li class="v" v=none>None</li></ul></td>
+                    </tr>
+                    <tr class="o" o=stick_style>
+                      <td>
+                Chart Style			</td>
+                      <td><ul><li class="v" v=candle_stick>CandleStick</li><li class="v" v=candle_stick_hlc>CandleStickHLC</li><li class="v" v=ohlc>OHLC</li><li class="v" v=line>Line</li><li class="v" v=line_o>Line-o</li><li class="v" v=none>None</li></ul></td>
+                    </tr>
+                    <tr class="o" o=line_style parents=stick_style:line_o|stick_style:line>
+                      <td>
+                Line Style			</td>
+                      <td><ul><li class="v" v=c>Close</li><li class="v" v=m>Median Price</li><li class="v" v=w>Volume Weighted</li></ul></td>
+                    </tr>
+                    <tr class="o" o=indicator>
+                      <td>
+                Indicator			</td>
+                      <td><ul><li class="v" v=macd>MACD</li><li class="v" v=kdj>KDJ</li><li class="v" v=stoch_rsi>StochRSI</li><li class="v" v=dmi>DMI</li><li class="v" v=cmf>CMF</li><li class="v" v=obv>OBV</li><li class="v" v=rsi>RSI</li><li class="v" v=bid_ratio>Bid Ratio</li><li class="v" v=none default=yes>None</li></ul></td>
+                    </tr>
+                    <tr class="o" o=scale>
+                      <td>
+                Scale			</td>
+                      <td><ul><li class="v" v=normal>Linear</li><li class="v" v=logarithmic>Logarithmic</li></ul></td>
+                    </tr>
+                    <tr class="o" o=depth_range>
+                      <td>
+                Depth Range				<abbr title="Show the depth hints until bid or ask is less or more than average order price n%">?</abbr>
+                      </td>
+                      <td><ul><li class="v" v=p1>1%</li><li class="v" v=p2 default=yes>2%</li><li class="v" v=p5>5%</li><li class="v" v=pmax>Max</li><li class="v" v=none>None</li></ul></td>
+                    </tr>
+                    <tr class="o" o=volume_currency>
+                      <td>
+                Volume Currency			</td>
+                      <td><ul><li class="v" v=base>Base</li><li class="v" v=quote>Quote</li></ul></td>
+                    </tr>
+                    <tr class="o" o=time_zone>
+                      <td>
+                Time Zone			</td>
+                      <td><ul><li class="v" v=local>Local</li><li class="v" v=utc>UTC</li></ul></td>
+                    </tr>
+                    <tr class="o" o=chart_range>
+                      <td>
+                Chart Range				<abbr title="Limit chart&#039;s price range. It&#039;s helpful when extream long candlestick makes chart unreadable.">?</abbr>
+                      </td>
+                      <td><ul><li class="v" v=auto default=yes>Auto</li><li class="v" v=pmax>Max</li></ul></td>
+                    </tr>
+                    <tr class="o" o=theme>
+                      <td>
+                Theme			</td>
+                      <td><ul><li class="v" v=dark>Dark</li><li class="v" v=light>Light</li></ul></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td colspan=2><a id="btn_settings">Indicator Parameters</a></td>
+                    </tr>
+                  </table></div>
+                </div></li><li><div class="dropdown">
+                  <div class="t">
+                    TOOLS<span class="caret"><i class="icon-caret-down"></i><i class="icon-caret-up"></i></span>
+                  </div>
+
+                  <div class="dropdown-data"><table class="nowrap simple">
+                    <tr><td>
+                      <a class="link_estimate_trading">Estimate Trading</a><br /><a class="link_alarm">Alarm</a>
+                    </td></tr>
+                    <tr><td class="modes">
+                      <span>Draw Lines</span>
+                      -
+                      <a class="mode" mode=draw_line>Snap</a>
+                      <a class="mode" mode=draw_fline>Free</a>
+                      <br /><a class="mode" mode=draw_fhline>Draw Fibonacci Retracements</a><br /><a class="mode" mode=draw_ffan>Draw Fibonacci Fans</a><br /><a class="mode" mode=draw_fhlineex>Draw Fibonacci Extensions</a><br />
+                      <div class="hint">
+                        Left Click - add point/line<br />Right Click - remove line
+                      </div>
+                    </td></tr>
+                    <tr><td id="drawing">
+                      <div class="unsel">
+                        <span>Drawing</span>
+                        <a id="drawing_new">New</a>
+                        <a id="drawing_clone">Clone</a>
+                        <a id="drawing_delete">Delete</a>
+                        <a id="drawing_recover" style="display:none">Recover</a>
+                      </div>
+
+                      <div id="drawings" class="hint"></div>
+                    </td></tr>
+                  </table></div>
+                </div></li>
 
 
 
-          <li class="sep"></li><li id="mode">
-            <a id="mode_cross" class="mode selected" title='Cross Cursor' mode=cross><img src=/img/shape-cross.png /></a><a id="mode_draw_line" class="mode" title='Draw lines' mode=draw_line><img src=/img/shape-line.png /></a><a id="mode_draw_fhline" class="mode" title='Draw Fibonacci Retracements' mode=draw_fhline><img src=/img/shape-fr.png /></a><a id="mode_draw_ffan" class="mode" title='Draw Fibonacci Fans' mode=draw_ffan><img src=/img/shape-ffan.png /></a>
-            <span id="drawing_status"></span>
-          </li><li class="sep"></li><li><a class="link_alarm"><i class="icon-bell"></i></a></li>
-          </ul></div></div>
-          </div></div>
+                <li class="sep"></li><li id="mode">
+                  <a id="mode_cross" class="mode selected" title='Cross Cursor' mode=cross><img src=/img/shape-cross.png /></a><a id="mode_draw_line" class="mode" title='Draw lines' mode=draw_line><img src=/img/shape-line.png /></a><a id="mode_draw_fhline" class="mode" title='Draw Fibonacci Retracements' mode=draw_fhline><img src=/img/shape-fr.png /></a><a id="mode_draw_ffan" class="mode" title='Draw Fibonacci Fans' mode=draw_ffan><img src=/img/shape-ffan.png /></a>
+                  <span id="drawing_status"></span>
+                </li><li class="sep"></li><li><a class="link_alarm"><i class="icon-bell"></i></a></li>
+                </ul></div></div>
+                </div></div>
 
 
 <div id="loading"><div class="inner"><div class="text">Loading...</div></div></div>
