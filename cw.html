@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Crypto Watch</title>
+    <script type="text/javascript" src="https://static.cryptowat.ch/assets/scripts/embed.bundle.js"></script>
+    <script type="text/javascript" src="/js/embed/dist/main.bundle.js"></script>
+  </head>
+  <body>
+    <div id="chart-container" style="width: 100%; height: 800px"></div>
+    <script type="text/javascript">
+    ;(function() {
+      'use strict';
+
+      var chart = new cryptowatch.Embed('poloniex', 'xmrbtc', {
+        timePeriod: '4H',
+        presetColorScheme: 'standard'
+      });
+
+      chart.mount('#chart-container');
+    }());
+    </script>
+  </body>
+</html>
