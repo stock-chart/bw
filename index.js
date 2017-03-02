@@ -5,7 +5,7 @@ var app = express();
 app.use(express.static(__dirname + '/static'));
 
 app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/xmrbtc.html')
+  res.sendFile(__dirname + '/xmrbtc.html');
 });
 
 app.get('/cw', function(req, res) {
