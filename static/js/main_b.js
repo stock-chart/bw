@@ -26,8 +26,8 @@
             Vi: "depth",
             La: "ShapeColors",
             Rm: "home",
-            sv: "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec",
-            Iz: "=>",
+            sv: "1月 2月 3月 4月 5月 6月 7月 8月 9月 10月 11月 12月",
+            Iz: n("F"), // ""
             NX: "barWidth",
             SC: "rgba(64,255,64,0.3)",
             Uv: "fetch depth failed",
@@ -40,7 +40,7 @@
             Ay: "<dd><span style=\"color:",
             kV: "&size=7",
             jh: "getTimezoneOffset",
-            xw: "3d",
+            xw: "3天",
             dT: "XCHANGE",
             jO: "failed 2, #{r.error} #{r.result} #{v}#{JSON.stringify(r)}",
             US: "#FD8F00",
@@ -91,7 +91,7 @@
             EX: "hour",
             Sa: "litecoin",
             rL: "<div class=ok>You don't have any order yet.</div>",
-            OY: "1h",
+            OY: "1小时",
             mS: "<span style=\"color:#666\"><small>(",
             Eo: "cmf_params",
             qL: "left)</small></span>",
@@ -129,7 +129,7 @@
             RI: ".ok",
             zd: "_avg",
             eH: "href",
-            MU: "1m",
+            MU: "1分钟",
             PL: "value",
             De: "macd_params",
             Vt: "mousemove",
@@ -217,11 +217,11 @@
             uT: "O:",
             ty: "right",
             Ma: "Hide QR Code",
-            Yr: " day",
+            Yr: "天",
             ow: "#DF8ADF",
             WO: "C:",
             bT: " Arrow",
-            OX: "2h",
+            OX: "2小时",
             RP: ".tablist",
             VR: "axis_min",
             PX: "draw_line",
@@ -460,18 +460,18 @@
             Sl: "rgba(0,0,0,0.4)",
             ZT: "getDay",
             iM: "+",
-            DT: "5m",
+            DT: "5分钟",
             Rn: "ucp",
-            Tt: "day",
+            Tt: "天",
             Av: "history",
             WS: "line_style",
             Ue: ", first is ",
             AL: "switch to ",
             Md: ".content_history",
             hR: "user_history",
-            QH: "years",
-            UV: "months",
-            OQ: "days",
+            QH: "年",
+            UV: "月",
+            OQ: "天",
             Rc: "_str",
             Ww: "The average price of cost and receive is <span class=\"grey\">",
             EJ: "calc depth",
@@ -516,7 +516,7 @@
             Qn: "img",
             OT: "฿",
             NM: ".cond_np",
-            Pa: "15m",
+            Pa: "15分钟",
             Sw: "#990F0F",
             QX: "v",
             Qh: "default",
@@ -559,7 +559,7 @@
             SH: "#FDBF6F",
             DB: "rgba(10,10,10,0.8)",
             gB: " trade",
-            Tp: "s ago",
+            Tp: "之前",
             Ps: "#markets",
             Pr: "#chart_info",
             oT: "#indicator_info",
@@ -576,15 +576,15 @@
             ZP: "moveTo",
             Pe: "Eva",
             LC: "color",
-            Qc: "3m",
+            Qc: "3分钟",
             PV: "draw_hline",
-            To: " ago",
+            To: "之前",
             MP: "Green Area",
             fC: "rgba(0,0,0,0.6)",
             Uc: "last tid: ",
-            ab: "4h",
+            ab: "4小时",
             jj: "draw_fline",
-            Oj: "12h",
+            Oj: "12小时",
             SA: "rgba(204,204,204,0.6)",
             XW: "Blob",
             OR: "li.period",
@@ -598,7 +598,7 @@
             SF: "#footer_outer",
             KG: "#comp_status",
             QZ: ".premium",
-            jW: "1d",
+            jW: "1天",
             xt: " successfully.",
             Mk: "bad",
             Fi: " target=\"_blank\">",
@@ -620,7 +620,7 @@
             LO: "obv_params",
             Zl: "$1<g>$2</g>",
             Dl: "bid_ratio_params",
-            DS: "30m",
+            DS: "30分钟",
             KJ: "#change",
             gg: "zh",
             aU: ".rts",
@@ -638,7 +638,7 @@
             dZ: " missed trade",
             Bm: "devid",
             NT: "sid",
-            Lu: "6h",
+            Lu: "6小时",
             Xo: "#drawing_recover",
             RK: ".error",
             VT: "indicator",
@@ -704,7 +704,7 @@
             jg: "text",
             sb: "ping",
             TC: ":",
-            iG: "Now",
+            iG: "现在",
             ZM: "lineWidth",
             VX: "Red Alarm",
             KU: "keyup",
@@ -2411,6 +2411,11 @@
 
                     function i(n, e, r) {
                         var o;
+
+                        /*
+                         * =================================================================================
+                         * "NetworkError: 404 Not Found - http://localhost:8080/api.php?method=account_info"
+                         * =================================================================================
                         return o = $.ajax({
                             url: t.Pu + n,
                             type: t.RS,
@@ -2428,6 +2433,7 @@
                                 reason: i
                             })
                         })
+                        */
                     }
 
                     function u(e, r) {
@@ -3615,7 +3621,7 @@
                             43200: t.Oj,
                             86400: t.jW,
                             259200: t.xw,
-                            604800: "1w"
+                            604800: "1周"
                         }, nl = {};
                     for (ji in qu) so.call(qu, ji) && (ol = qu[ji], nl[ol] = ji);
                     for (we = {}, po = null, pa = $(t.OR, Hu), ca = 0, fa = pa.length; fa > ca; ca++) tu = pa[ca], tu = $(tu), (Gu = nl[tu.text()]) && (we[Gu] = tu, function(n, e) {
