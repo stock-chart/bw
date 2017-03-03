@@ -93,6 +93,31 @@ body {
 
 
 .modal {
+  position: absolute;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+
+  background-color: #000;
+  border: 1px solid rgba(255, 255, 255, .255);
+
+  display: none;
+  min-width: 600px;
+}
+
+.modal .header {
+  font-size: 16px;
+  padding: 5px 15px;
+  background-color: rgba(255, 255, 255, .105);
+  border-bottom: 1px solid rgba(255, 255, 255, .125);
+}
+
+.modal .header .close {
+  float: right;
+}
+
+.modal .body {
+  padding: 15px;
 }
 
 .modal.market-modal {

@@ -1,3 +1,44 @@
+/* qkl123.com */
+$(function() {
+
+  var $modal = $('.modal');
+  var $toggler = $('[data-toggle="modal"]');
+  var $dismiss = $('[data-toggle="dismiss"]');
+
+  $modal.each(function(index, modal) {
+    initModalState(modal);
+  });
+
+  $toggler.on('click', handleToggle);
+
+  $dismiss.on('click', handleDismiss);
+
+  function initModalState(modal) {
+    var $modal = $(modal);
+    var width = $modal.width();
+    var height = $modal.height();
+
+    $modal.css({
+      marginLeft: -(width/2),
+      marginTop: -(height/2)
+    });
+  }
+
+  function handleToggle(e) {
+    e.preventDefault();
+    var target = $(this).data('target');
+    $(target).fadeIn('fast');
+  }
+
+  function handleDismiss(e) {
+    e.preventDefault();
+    $(this).closest('.modal')
+      .fadeOut();
+  }
+
+});
+
+
 /* Copyright 2013-2014 BitcoinWisdom All rights reserved */
 (function() {
     var n = function(n) {
