@@ -162,7 +162,7 @@
             Xd: "$conf",
             Xc: "conf:",
             sZ: ".direct_address",
-            Di: "Cross is unlocked.",
+            Di: "光标未锁定.",
             oH: "min",
             WY: "volume_currency",
             RH: "<div><a>",

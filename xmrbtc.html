@@ -8,7 +8,7 @@
 		<meta name="keywords" content="" />
 		<title>Poloniex XMR/BTC 交易 - 区块链123</title>
 		<link href="/css/app.css?1409413270" rel="stylesheet" type="text/css" />
-		<link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="/css/style.css" rel="stylesheet" type="text/css" />
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.0.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
@@ -26,7 +26,7 @@
 
 	<body>
 
-    <section id="settings" style="position: fixed; opacity: 0">
+    <section id="settings" style="position: fixed; opacity: 0; z-index: -1">
       <table class="nowrap simple conf">
         <tr class="o" o="main_lines">
           <td>Main Indicator</td>
@@ -143,7 +143,7 @@
       </table>
     </section>
 
-    <section id="utilities" style="position: fixed; opacity: 0">
+    <section id="utilities" style="position: fixed; opacity: 0; z-index: -1">
       <table class="nowrap simple">
         <tr>
           <td class="modes">
@@ -172,7 +172,7 @@
       </table>
     </section>
 
-    <section id="markets" style="position: fixed; opacity: 0">
+    <section class="modal markets-modal" id="J__markets" style="position: fixed; opacity: 0; z-index: -1">
       <table class="nowrap simple nav-markets">
         <tr>
           <td><a href="https://btc-e.com" target="_blank" title="BTC-e">BTC-e</a></td>
@@ -290,33 +290,6 @@
       </table>
     </section>
 
-    <section id="duration" style="position: fixed; opacity: 0">
-      <div id="control">
-        <div class="inner">
-          <ul id="periods" class="horiz">
-            <li style='line-height:26px'>时间间隔:</li>
-            <li class="period"><a>1周</a></li>
-            <li class="subsep"></li>
-            <li class="period"><a>3天</a></li>
-            <li class="period"><a>1天</a></li>
-            <li class="subsep"></li>
-            <li class="period"><a>12小时</a></li>
-            <li class="period"><a>6小时</a></li>
-            <li class="period"><a>4小时</a></li>
-            <li class="period"><a>2小时</a></li>
-            <li class="period"><a>1小时</a></li>
-            <li class="subsep"></li>
-            <li class="period"><a>30分钟</a></li>
-            <li class="period"><a>15分钟</a></li>
-            <li class="period"><a>5分钟</a></li>
-            <li class="period"><a>3分钟</a></li>
-            <li class="period"><a>1分钟</a></li>
-            <li class="subsep"></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
     <section id="warning" style="position: fixed; opacity: 0">
       <div id="warning"></div>
     </section>
@@ -325,7 +298,7 @@
       <div id="qr"><img /></div>
     </section>
 
-    <section id="mode" style="position: fixed; opacity: 0">
+    <section id="mode" style="position: fixed; opacity: 0; z-index: -1">
       <li id="mode">
         <a id="mode_cross" class="mode selected" title="Cross Cursor" mode="cross">
           <img src="/img/shape-cross.png" />
@@ -350,24 +323,49 @@
         <!-- control -->
         <div id="control">
           <div class="inner">
-            <ul id="periods" class="horiz">
-              <li style="line-height:26px">时间间隔:</li>
-              <li class="period"><a>1周</a></li>
+            <ul id="periods" class="horiz clearfix">
+              <li class="title btn">
+                <button id="J__exchange">
+                  <span>Poloniex XMR/BTC</span>
+                  <span class="addon">
+                    <span class="fa fa-ellipsis-v"></span>
+                  </span>
+                </button>
+              </li>
+
+              <li class="btn">
+                <button id="J__id">
+                  <span>指标</span>
+                  <span class="addon">
+                    <span class="fa fa-ellipsis-v"></span>
+                  </span>
+                </button>
+              </li>
+
+              <li class="btn dropdown" style="margin-right: 0;">
+                <button id="J__settings">
+                  <span>设置</span>
+                  <span class="addon">
+                    <span class="fa fa-ellipsis-v"></span>
+                  </span>
+                </button>
+              </li>
+
               <li class="subsep"></li>
+
+              <li class="period first"><a>1周</a></li>
               <li class="period"><a>3天</a></li>
               <li class="period"><a>1天</a></li>
-              <li class="subsep"></li>
               <li class="period"><a>12小时</a></li>
               <li class="period"><a>6小时</a></li>
               <li class="period"><a>4小时</a></li>
               <li class="period"><a>2小时</a></li>
               <li class="period"><a>1小时</a></li>
-              <li class="subsep"></li>
               <li class="period"><a>30分钟</a></li>
               <li class="period"><a>15分钟</a></li>
               <li class="period"><a>5分钟</a></li>
               <li class="period"><a>3分钟</a></li>
-              <li class="period"><a>1分钟</a></li>
+              <li class="period last"><a>1分钟</a></li>
             </ul>
           </div>
         </div>
