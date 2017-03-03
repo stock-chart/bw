@@ -2,8 +2,11 @@
 $(function() {
 
   var $modal = $('.modal');
+  var $body = $('body');
   var $toggler = $('[data-toggle="modal"]');
   var $dismiss = $('[data-toggle="dismiss"]');
+  var $backdrop = $('<div class="backdrop" />');
+  var duration = 100;
 
   $modal.each(function(index, modal) {
     initModalState(modal);
@@ -27,13 +30,16 @@ $(function() {
   function handleToggle(e) {
     e.preventDefault();
     var target = $(this).data('target');
-    $(target).fadeIn('fast');
+    $body.append($backdrop);
+    $(target).fadeIn(duration).draggable({ handle: '.header' });
   }
 
   function handleDismiss(e) {
     e.preventDefault();
     $(this).closest('.modal')
-      .fadeOut();
+      .fadeOut(duration, function() {
+        $backdrop.remove();
+      });
   }
 
 });
