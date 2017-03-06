@@ -345,7 +345,7 @@
             Gg: "object",
             Nj: "Stick Line",
             PQ: "Red Stroke",
-            Ye: " %",
+            Ye: "%</span>",
             Wm: "system",
             nG: "mousedown",
             Zs: "line",
@@ -2909,16 +2909,76 @@
                             if (Ni && (Ci = Li - Wi), _ = wr(c[r][T]) * wo, p = Xe[mt], C = Pi < p.y ? t.EU + gr(h / _ - 1) + t.kd + gr(_ / h - 1) + t.EU + br(h - _) : t.BV, (null != n ? null != (it = n[zo]) ? it.length : void 0 : void 0) && N && So) o = n, y = xi - (Si - v) - 8, Y = t.BV, (s = o[zo][y]) && (Z = xe[st], o[Yo][y] && (Jr = (100 * (o[Ko][y] / Z - 1)).toFixed(2) + t.Ta, Jr = t.QE + Jr + t.TZ, Y += t.WE + kl(o[qo][y]) + t.Ac + j + t.kH + kl(o[Yo][y]) + t.Ac + Pr + t.tX + Vl(o[Ko][y]) + t.Ac + Jr + t.Oi), o[Do][y] && (Jr = (100 * (o[jo][y] / Z - 1)).toFixed(2) + t.Ta, Jr = t.Nn + Jr + t.TZ, Y += t.Wz + kl(o[qo][y]) + t.Ac + j + t.Wy + kl(o[Do][y]) + t.Ac + Pr + t.pf + Vl(o[jo][y]) + t.Ac + Jr + t.Oi), Y += t.Ww + Vl(o[zo][y], !0) + t.Ac + vo + t.ih), yu.html(t.WJ + Y + t.WI), Su.html(t.BV);
                             else if ($i >= Wi) {
                                 if (Y = t.BV, $ = t.BV, null != ol[T]) {
-                                    if (Q = Dt(c, Ci + Wi - 1, k), L = null != Q[T] ? ol[T] / Q[T] - 1 : 0, L = 100 * L, L = L.toFixed(2), L[0] === t.br ? (L = t.QL + L.substr(1), G = t.YF) : L > 0 ? (L = t.Wu + L, G = t.gE) : (L = t.Wu + L, G = t.YQ), G = t.BV, Y = [t.lI + ir(ol[V]) + t.Iz + hr(ol[V]), t.uT + Vl(ol[X]), t.rF + Vl(ol[M]), t.Wq + Vl(ol[I]), t.WO + Vl(ol[T]), t.Rj + L + t.Ye, t.vL + ((ol[M] - ol[I]) / ol[I] * 100).toFixed(2) + t.Ye, t.bF + mr(ol[Bo] > 1e-11 ? ol[Bo] : 0)], d = null != Mi[t.Rx] && Mi[t.Rx] !== t.vY) {
+
+                                    /* edit 2017-03-06 */
+                                    if (
+                                        /*---------------- if conditions -------------------*/
+                                        Q = Dt(c, Ci + Wi - 1, k),
+                                        L = null != Q[T] ? ol[T] / Q[T] - 1 : 0,
+                                        L = 100 * L,
+                                        L = L.toFixed(2),
+
+                                        L[0] === t.br ?
+                                        (L = t.QL + L.substr(1), G = t.YF) :
+                                        L > 0 ? (L = t.Wu + L, G = t.gE) : (L = t.Wu + L, G = t.YQ),
+                                        
+                                        G = t.BV,
+
+                                        Y = [
+                                          t.lI + ir(ol[V]) + t.Iz + hr(ol[V]),
+                                          t.uT + Vl(ol[X]),
+                                          t.rF + Vl(ol[M]),
+                                          t.Wq + Vl(ol[I]),
+                                          t.WO + Vl(ol[T]),
+                                          // t.Rj + L + t.Ye,  // 涨幅
+
+                                          // 如果L是负数 `-`
+                                          t.Rj + (new RegExp('<span class="m">-</span>').test(L) ? '<span style="color: #ff0000;">' + L : '<span style="color: #00ff00;">' + L) + t.Ye,  // 涨幅
+
+                                          t.vL + ((ol[M] - ol[I]) / ol[I] * 100).toFixed(2) + t.Ye, t.bF + mr(ol[Bo] > 1e-11 ? ol[Bo] : 0)
+                                        ],
+                                        
+                                        d = null != Mi[t.Rx] && Mi[t.Rx] !== t.vY
+                                        /*---------------- end if conditions -------------------*/
+                                    )/* if */ {
                                         ut = S[i];
                                         for (A in ut) so.call(ut, A) && (a = ut[A], (c = null != a ? null != (et = a[Io]) ? et[w] : void 0 : void 0) && (D = Yt(c, J), Mi[t.WS] ? (z = null != (rt = S[l][A]) ? null != rt[tt = Io + t.TC + mi] ? rt[tt = Io + t.TC + mi] : rt[tt] = Ct(c, [P, H, T]) : void 0, f = Yt(c, z)[0], o = ol[Er[mi]]) : (f = Yt(c, T), o = ol[T]), U = (ol[J] - D[0]) / Io, W = f[U], E = S[t.Wi] ? o / W / S[t.Wi] - 1 : o / W - 1, Y = (t.lI + ir(ol[V]) + t.ou + $symbol + t.Xl + Vl(o) + t.ou + A + t.Xl + Vl(W)).split(t.ou)))
                                     }
+
+                                    /* edited 2017-03-06 */
+
                                     F = function() {
                                         var n, e, r;
                                         for (r = [], n = 0, e = Y.length; e > n; n++) m = Y[n], r.push(t.WB + m.trim() + t.AH);
                                         return r
-                                    }(), Y = t.WL + F.join(t.BV) + t.ko, u = t.Wf + cr(ol[J] - Date.now() / 1e3) + C + t.We, Y += u, O = Mi[t.VT], _l(Su, O)
-                                } else B = Dt(c, Ui, k), null != B[V] && (g = new Date(B[V]), g.setSeconds(Io * (Wi - (Ui - Ci))), Y = t.lI + ir(g) + t.Iz + hr(g)), u = t.Wf + cr(g.getTime() / 1e3 - Date.now() / 1e3) + C + t.We, Y += u, _l(Su, null);
+                                    }(),
+                                    
+                                    Y = t.WL + F.join(t.BV) + t.ko,
+
+                                    // OFFSET文本
+                                    u = t.Wf + cr(ol[J] - Date.now() / 1e3) + C + t.We,
+
+                                    // 这里`Y += u`添加`OFFSET`
+                                    // Y += u,
+                                    O = Mi[t.VT],
+                                    _l(Su, O)
+
+                                } else {
+                                  
+                                  B = Dt(c, Ui, k),
+                                  null != B[V] && (g = new Date(B[V]),
+                                  g.setSeconds(Io * (Wi - (Ui - Ci))),
+                                  Y = t.lI + ir(g) + t.Iz + hr(g)),
+
+                                  // OFFSET文本
+                                  u = t.Wf + cr(g.getTime() / 1e3 - Date.now() / 1e3) + C + t.We,
+
+                                  // 这里`Y += u`添加`OFFSET`
+                                  // Y += u,
+                                  _l(Su, null);
+                                  /* -- end --*/
+                                }
+
                                 yu.html(t.WJ + Y + t.WI)
                             }
                             return 0
