@@ -514,8 +514,8 @@
       window.$ssl = 's';
       window.$host = 's2.bitcoinwisdom.com';
       window.$test = false;
-      window.$symbol = 'poloniexxmrbtc';
-      window.$hsymbol = 'Poloniex XMR\/BTC';
+      window.$symbol = location.hash.split('#')[1] || 'bitfinexbtcusd';
+      window.$hsymbol = 'Bitfinex BTC\/USD';
       window.$theme_name = 'dark';
       window.$debug = false;
       window.$p = false;
