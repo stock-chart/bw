@@ -320,17 +320,18 @@
           <span id="drawing_status"></span>
         </li>
 
-        <li><a class="mode" mode="draw_line" title="Snap">...</a></li>
-        <li><a class="mode" mode="draw_fline" title="Free">...</a></li>
-        <li><a class="mode" mode="draw_fhline" title="Draw Fibonacci Retracements">...</a></li>
-        <li><a class="mode" mode="draw_ffan" title="Draw Fibonacci Fans">...</a></li>
-        <li><a class="mode" mode="draw_fhlineex" title="Draw Fibonacci Extensions">...</a></li>
+        <li><a class="mode" mode="draw_line" title="Snap"><span class="fa fa-pencil"></span></a></li>
+        <li><a class="mode" mode="draw_fline" title="Free"><span class="fa fa-pencil"></span></a></li>
+        <li><a class="mode" mode="draw_fhline" title="Draw Fibonacci Retracements"><span class="fa fa-pencil"></span></a></li>
+        <li><a class="mode" mode="draw_ffan" title="Draw Fibonacci Fans"><span class="fa fa-pencil"></span></a></li>
+        <li><a class="mode" mode="draw_fhlineex" title="Draw Fibonacci Extensions"><span class="fa fa-pencil"></span></a></li>
+        <li><a id="drawing_delete" style="display: none;"><span class="fa fa-trash"></span></a></li>
+        <li><a id="drawing_recover" style="display: none;"><span class="fa fa-trash"></span></a></li>
       </ul>
     </section>
 
-
     <!-- main-container -->
-    <div id="main-container">
+    <div id="J__container">
 
       <!-- header-outer -->
       <div id="header_outer">
@@ -368,7 +369,7 @@
                 </li>
 
                 <li class="btn" style="margin-right: 0;">
-                  <button>
+                  <button data-toggle="drawline">
                     <span class="fa fa-paint-brush"></span>
                   </button>
                 </li>
@@ -480,11 +481,9 @@
         header = document.getElementById('header_outer');
         height = (_ref = window.innerHeight) != null ? _ref : document.documentElement.clientHeight;
         // main.style.height = height - header.clientHeight - 33 + 'px';
-        console.info('=>', height, header.clientHeight, height - header.clientHeight);
         main.style.height = height - header.clientHeight + 'px';
         main.style.display = 'block';
 
-        console.log(main.style);
       }).call(this);
     </script>
 

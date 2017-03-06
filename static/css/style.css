@@ -163,3 +163,29 @@ table.simple ul li {
   border-right: 1px solid rgba(255, 255, 255, .125);
 }
 
+.drawline {
+  display: none;
+}
+
+.drawline.active {
+  display: block!important;
+}
+
+.modes {
+  list-style: none;
+  padding-left: 0;
+}
+
+.modes > li {
+  padding: 2px;
+}
+
+.modes > li > a {
+  display: block;
+  color: rgba(255, 255, 255, .5);
+  padding: 6px 10px;
+}
+
+.modes > li > a:hover {
+  color: rgba(255, 255, 255, .85);
+}

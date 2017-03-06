@@ -1,48 +1,3 @@
-/* qkl123.com */
-$(function() {
-
-  var $modal = $('.modal');
-  var $body = $('body');
-  var $toggler = $('[data-toggle="modal"]');
-  var $dismiss = $('[data-toggle="dismiss"]');
-  var $backdrop = $('<div class="backdrop" />');
-  var duration = 100;
-
-  $modal.each(function(index, modal) {
-    initModalState(modal);
-  });
-
-  $toggler.on('click', handleToggle);
-
-  $dismiss.on('click', handleDismiss);
-
-  function initModalState(modal) {
-    var $modal = $(modal);
-    var width = $modal.width();
-    var height = $modal.height();
-
-    $modal.css({
-      marginLeft: -(width/2),
-      marginTop: -(height/2)
-    });
-  }
-
-  function handleToggle(e) {
-    e.preventDefault();
-    var target = $(this).data('target');
-    $body.append($backdrop);
-    $(target).fadeIn(duration).draggable({ handle: '.header' });
-  }
-
-  function handleDismiss(e) {
-    e.preventDefault();
-    $(this).closest('.modal')
-      .fadeOut(duration, function() {
-        $backdrop.remove();
-      });
-  }
-
-});
 
 
 /* Copyright 2013-2014 BitcoinWisdom All rights reserved */
@@ -857,6 +812,8 @@ $(function() {
             KF: "#connection",
             KE: "#help_connection"
         };
+
+
     (function() {
         var n, e, r, o, i, u, l, a, s, c, f, h, d, p, v, b, g, m, F, x, y, w, T, V, k, S, M, _, I, X, Z, J, P, H, B, O, R, E, N, L, U, W, C, Q, A, Y, D, K, z, j, G, q, nt, tt, et, rt, ot, it, ut, lt, at, st, ct, ft, ht, dt, pt, vt, bt, gt, mt, Ft, xt, yt, $t, wt, Tt, Vt, kt, St, Mt, _t, It, Xt, Zt, Jt, Pt, Ht, Bt, Ot, Rt, Et, Nt, Lt, Ut, Wt, Ct, Qt, At, Yt, Dt, Kt, zt, jt, Gt, qt, ne, te, ee, re, oe, ie, ue, le, ae, se, ce, fe, he, de, pe, ve, be, ge, me, Fe, xe, ye, $e, we, Te, Ve, ke, Se, Me, _e, Ie, Xe, Ze, Je, Pe, He, Be, Oe, Re, Ee, Ne, Le, Ue, We, Ce, Qe, Ae, Ye, De, Ke, ze, je, Ge, qe, nr, tr, er, rr, or, ir, ur, lr, ar, sr, cr, fr, hr, dr, pr, vr, br, gr, mr, Fr, xr, yr, $r, wr, Tr, Vr, kr, Sr, Mr, _r, Ir, Xr, Zr, Jr, Pr, Hr, Br, Or, Rr, Er, Nr, Lr, Ur, Wr, Cr, Qr, Ar, Yr, Dr, Kr, zr, jr, Gr, qr, no, to, eo, ro, oo, io, uo, lo, ao = [].slice,
             so = {}.hasOwnProperty,
@@ -865,6 +822,7 @@ $(function() {
                     if (t in this && this[t] === n) return t;
                 return -1
             };
+
         ! function() {
             var n, e, r, o, i;
             $(function() {
@@ -2807,8 +2765,11 @@ $(function() {
                 var u, l, h, d, p;
                 return p = m(4), u = p[0], h = p[1], d = p[2], l = p[3], be = n, ge = e, ve = r, a = u, c = h, f = d, s = l
             }(), Vr = null, Dr = null,
+
+            // ============================= Ue/window ================================
             function() {
                 var n, e, a, s, f, h, g, F, S, Z, E, C, A, j, G, tt, it, dt, pt, $t, Tt, St, Nt, Ut, Wt, Qt, At, Kt, zt, jt, Gt, qt, ne, te, re, oe, ie, se, he, pe, xe, ye, we, Ve, ke, Me, Xe, Ze, Je, Oe, Ne, Le, Ue, Ce, Qe, Ye, je, Ge, qe, tr, ur, pr, Fr, Tr, kr, Mr, Xr, Zr, Pr, Rr, Er, Ur, qr, no, to, io, fo, ho, po, vo, bo, go, mo, Fo, xo, yo, $o, wo, To, Vo, ko, So, Mo, _o, Io, Xo, Zo, Jo, Po, Ho, Bo, Oo, Ro, Eo, No, Lo, Uo, Wo, Co, Qo, Ao, Yo, Do, Ko, zo, jo, Go, qo, ni, ti, ei, ri, oi, ii, ui, li, ai, si, ci, fi, hi, di, pi, vi, bi, gi, mi, Fi, xi, yi, $i, wi, Ti, Vi, ki, Si, Mi, _i, Ii, Xi, Zi, Ji, Pi, Hi, Bi, Oi, Ri, Ei, Ni, Li, Ui, Wi, Ci, Qi, Ai, Yi, Di, Ki, zi, ji, Gi, qi, nu, tu, eu, ru, ou, iu, uu, lu, au, su, cu, fu, hu, du, pu, vu, bu, gu, mu, Fu, xu, yu, $u, wu, Tu, Vu, ku, Su, Mu, _u, Iu, Xu, Zu, Ju, Pu, Hu, Bu, Ou, Ru, Eu, Nu, Lu, Uu, Wu, Cu, Qu, Au, Yu, Du, Ku, zu, ju, Gu, qu, nl, tl, el, rl, ol, il, ul, ll, al, sl;
+
                 $(function() {
                     function cl() {
                         var n;
@@ -2865,7 +2826,8 @@ $(function() {
 
                     function Fl() {
                         var n, e, r, o, i, u, l, a, s, c;
-                        if (Si = Eu.width() - Ou.width() - Mu.width(), ki = Eu.height() - ku.height() - Vu.height(), Oi.width !== Si || Oi.height !== ki)
+                        // Eu = window
+                        if (Si = Eu/* window */.width() - Ou/* #sidebar_router */.width() - Mu.width(), ki = Eu.height() - ku.height() - Vu.height(), Oi.width !== Si || Oi.height !== ki)
                             for (yu.css(t.NO, Si - 8), Iu.height(ki), c = [Oi, Bi, Ri], a = 0, s = c.length; s > a; a++) e = c[a], e.width = Si, e.height = ki;
                         return null == g && (g = Fu.outerHeight(!0)), o = g + 26 - ki, o > 0 ? (i = 15 - Math.ceil(o / 26), 2 > i && (i = 2)) : i = 15, u = 13 * i, Ut = i, $t = !1, ql(), $t = !0, $(t.Ll).height(u), $(t.NL).css(t.xm, 13 * (i - 15)), $(t.NJ).css(t.xm, 13 * (i - 15)), l = ki - Fu.outerHeight(!0), Ru.height(l), uu = Math.floor(ki / 6 - Rr), $i = Math.floor((Si - xi) / Ti), wi = Math.floor((Si - xi) / Ti), Su.css(t.vs, uu + 16), Er ? (n = Er[w], r = Yt(n, T).length - 1, ho = r, null != Ci ? Ci -= wi - Cu : Ci = r - wi + 1, 0 > Ci && (Ci = 0), Ci + wi > r && (Ci = r - wi + 1), Cu = wi, ul(), Il(), !0) : void 0
                     }
@@ -3633,12 +3595,12 @@ $(function() {
                                     [t.km, ai, L]
                                 ], a = [], i = 0, u = o.length; u > i; i++) l = o[i], e = l[0], n = l[1], r = l[2], Ge[n] = r, a.push(je[e] = n);
                             return a
-                        }(), Xo = window.$them_dark, Zo = window.$theme_light, $theme_name === t.PM ? (Jo = $theme_dark, $(t.Vn).attr(t.QQ, t.PM)) : (Jo = $theme_light, $(t.Vn).attr(t.QQ, t.oI)), $.support.cors = !0, il = window, eu = null, Di = null, Du = null, Eu = $(window), Iu = $(t.PI), Ou = $(t.PH), ku = $(t.PG), Vu = $(t.SF), Mu = $(t.PE), Ju = $(t.hY), Nu = $(t.Rf), $u = $(t.ep), mu = $(t.PA), Hu = $(t.Pz), Ru = $(t.Py), wu = $(t.Px), Fu = $(t.Pw), gu = $(t.wj), xu = $(t.hw), Bu = $(t.Pm), Zu = $(t.Ps), yu = $(t.Pr), Su = $(t.oT), Xu = $(t.Pp), bu = $(t.Po), pu = $(t.TV), vu = $(t.TT), Yi = !1, ou = !1, Tu = {
+                        }(), Xo = window.$them_dark, Zo = window.$theme_light, $theme_name === t.PM ? (Jo = $theme_dark, $(t.Vn).attr(t.QQ, t.PM)) : (Jo = $theme_light, $(t.Vn).attr(t.QQ, t.oI)), $.support.cors = !0, il = window, eu = null, Di = null, Du = null, Eu = $(window), Iu = $(t.PI), Ou = $(t.PH/* #sidebar_router */), ku = $(t.PG), Vu = $(t.SF), Mu = $(t.PE), Ju = $(t.hY), Nu = $(t.Rf), $u = $(t.ep), mu = $(t.PA), Hu = $(t.Pz), Ru = $(t.Py), wu = $(t.Px), Fu = $(t.Pw), gu = $(t.wj), xu = $(t.hw), Bu = $(t.Pm), Zu = $(t.Ps), yu = $(t.Pr), Su = $(t.oT), Xu = $(t.Pp), bu = $(t.Po), pu = $(t.TV), vu = $(t.TT), Yi = !1, ou = !1, Tu = {
                             asks: $(t.Pn),
                             bids: $(t.aE),
                             gasks: $(t.Pl),
                             gbids: $(t.RJ)
-                        }, Ei = Ru[0], Oi = $(t.IE)[0], Bi = $(t.CA)[0], Ri = $(t.Nt)[0], !Oi.getContext) return Iu.html(t.Xu), void 0;
+                        }, Ei = Ru[0], Oi = $(t.IE/* #canvas_main */)[0], Bi = $(t.CA)[0], Ri = $(t.Nt)[0], !Oi.getContext) return Iu.html(t.Xu), void 0;
                     Ii = Oi.getContext(t.Pg), _i = Bi.getContext(t.Pg), Xi = Ri.getContext(t.Pg), nu = Mu.width(), qt = !0, qt = -1 === $theme_name.indexOf(t.tz), qt = !0, Mr = null, mo = null,
                         function() {
                             function n(n) {
@@ -4520,7 +4482,89 @@ $(function() {
                             var t;
                             return 16 === (t = n.which) && (ti = !1), !0
                         }), la()
+
+                // =============================================================================================
+                //
+                /* qkl123.com */
+                // ====================================================================================================
+                ;(function() {
+
+                  var $window = $(window);
+                  var $body = $('body');
+                  var $modal = $('.modal');
+                  var $modalToggler = $('[data-toggle="modal"]');
+                  var $modalDismiss = $('[data-toggle="dismiss"]');
+                  var $backdrop = $('<div class="backdrop" />');
+                  var $drawlineToggler = $('[data-toggle="drawline"]');
+                  var $drawlinePanel = $('#J__drawline');
+                  var $container = $('#J__container');
+
+                  var duration = 100;
+
+                  $modal.each(function(index, modal) {
+                    initModalState(modal);
+                  });
+
+                  $modalToggler.on('click', handleModalToggle);
+
+                  $modalDismiss.on('click', handleModalDismiss);
+
+                  $drawlineToggler.on('click', handleDrawlineToggle);
+
+                  function initModalState(modal) {
+                    var $modal = $(modal);
+                    var width = $modal.width();
+                    var height = $modal.height();
+
+                    $modal.css({
+                      marginLeft: -(width/2),
+                      marginTop: -(height/2)
+                    });
+                  }
+
+                  function handleModalToggle(e) {
+                    e.preventDefault();
+                    var target = $(this).data('target');
+                    $body.append($backdrop);
+                    $(target).fadeIn(duration).draggable({ handle: '.header' });
+                  }
+
+                  function handleModalDismiss(e) {
+                    e.preventDefault();
+                    $(this).closest('.modal')
+                      .fadeOut(duration, function() {
+                        $backdrop.remove();
+                      });
+                  }
+
+                  function handleDrawlineToggle(e) {
+                    e.preventDefault();
+                    $drawlinePanel.toggleClass('active');
+                    var marginLeft = $drawlinePanel.hasClass('active') ? $drawlinePanel.width() : 0;
+                    $container.css('margin-left', marginLeft);
+
+                    Eu.trigger('resize');
+                  }
+
+                /* --------------/qkl123------------------------*/
+                }());
+                // ====================================================================================================
+                /*-------------- end qkl123 --------------------------------*/
+
+
+                // =============================================================================================
+
+                /*------- IMPORTANT ---------*/
                 })
+                /*-------- IMPORTANT --------*/
+
+                // =============================================================================================
+                
+
+                /* -------------- replace here ? ----------------- */
+                
+
+                // =============================================================================================
             }(), ce = ae = fe = le = he = de = se = null, u = i = l = o = null,
             function() {
                 function n() {
@@ -4607,5 +4651,9 @@ $(function() {
                     return n = $(t.KE), n.hide()
                 })
             }()
+
+
+
+
     }).call(this)
 }).call(this);
