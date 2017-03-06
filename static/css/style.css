@@ -3,6 +3,11 @@ body {
   overflow: hidden;
 }
 
+#orderbook .table .row {
+  height: 15px;
+  line-height: 15px;
+}
+
 .hide {
   display: none!important;
 }

@@ -4546,6 +4546,103 @@
                     Eu.trigger('resize');
                   }
 
+
+
+                  /*------------------- Market Depth -----------------------*/
+                  ;(function() {
+                  // =========================================================
+
+                  $.when.apply($, [
+                    $.getJSON('https://bfxdata.com/json/marketDepthAsksBTCUSD.json'),
+                    $.getJSON('https://bfxdata.com/json/marketDepthBidsBTCUSD.json')
+                  ]).done(function(data1, data2) {
+
+                    var data = [data1[0], data2[0]];
+
+                    ;['asks', 'bids'].forEach(function(key, index) {
+                      data[key] = data[index];
+
+                      data[key].forEach(function(pair) {
+                        pair[0] = Number(pair[0]);
+                        pair[1] = Number(pair[1]);
+                      });
+                    });
+
+                    var $graph = $('#J__market-depth-graph');
+                    $graph.css('height', 240);
+
+                    $graph.highcharts({
+                      chart: {
+                        type: 'area',
+                        backgroundColor: '#000',
+                      },
+
+                      colors: ['#9b0c04', '#33a12a'],
+
+                      exporting: {
+                        enabled: false
+                      },
+
+                      title: {
+                        text: null
+                      },
+
+                      subtitle: {
+                        text: null
+                      },
+
+                      xAxis: {
+                        allowDecimals: true,
+                        labels: {
+                          formatter: function() {
+                            return this.value; // clean, unformatted number for year
+                          }
+                        }
+                      },
+
+                      yAxis: {
+                        visible: false,
+                        title: {
+                          text: null
+                        },
+                        labels: {
+                          formatter: function() {
+                            return this.value;
+                          }
+                        }
+                      },
+
+                      tooltip: {
+                        pointFormat: '{point.y} XMR at {point.x} BTC'
+                      },
+
+                      plotOptions: {
+                        area: {
+                          marker: {
+                            enabled: false
+                          }
+                        }
+                      },
+
+                      series: [
+                        { name: '买单', data: data.asks },
+                        { name: '卖单', data: data.bids }
+                      ],
+
+                      credits: {
+                        enabled: false
+                      }
+
+                    });
+
+                  });
+
+
+                  // =========================================================
+                  }());
+                  /*------------------- Market Depth -----------------------*/
+
+
                 /* --------------/qkl123------------------------*/
                 }());
                 // ====================================================================================================
