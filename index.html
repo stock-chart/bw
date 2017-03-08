@@ -138,7 +138,7 @@
                 <li class="v" v="cmf">CMF</li>
                 <li class="v" v="obv">OBV</li>
                 <li class="v" v="rsi">RSI</li>
-                <li class="v" v="rbid_ratio">Bid Ratio</li>
+                <li class="v hide" v="rbid_ratio">Bid Ratio</li>
                 <li class="v" v="none" default="yes">None</li>
               </ul>
             </td>
@@ -173,7 +173,7 @@
               </ul>
             </td>
           </tr>
-          <tr class="o" o="time_zone">
+          <tr class="o hide" o="time_zone">
             <td>时区</td>
             <td>
               <ul>
@@ -419,6 +419,7 @@
       </div>
       <!-- main-container -->
 
+      <!-- userbar -->
       <div id="J__userbar" class="userbar">
         <ul class="list-unstyled">
           <li><a href="javascript:;"><span class="fa fa-user-circle"></span></a></li>
@@ -427,6 +428,7 @@
           <li><a href="javascript:;"><span class="fa fa-database"></span></a></li>
         </ul>
       </div>
+      <!-- /userbar -->
 
     </div>
     <!-- main-wrapper-outer -->
@@ -447,10 +449,35 @@
     <!-- footer_outer -->
     <div id="footer_outer" style="">
       <div id="footer">
-        <ul class="horiz donate">
-          <li class="hide"><span id="change">0</span>秒前更新<span id="realtime_error" style="display:none">在 <abbr title="Realtime(WebSocket) connection failed. Orderbook update every 1 minute, Trades update every 10 seconds.">Slow Mode</abbr></span></li>
-          <li id="now"></li>
-        </ul>
+        <div class="horiz donate">
+          <div style="float: left;">
+            <table class="nowrap simple conf">
+              <tbody>
+                <tr class="o" o="indicator">
+                  <td style="padding: 0;">
+                    <ul class="indicator-list">
+                      <li class="v" v="macd">MACD</li>
+                      <li class="v" v="kdj">KDJ</li>
+                      <li class="v" v="stoch_rsi">StochRSI</li>
+                      <li class="v" v="dmi">DMI</li>
+                      <li class="v" v="cmf">CMF</li>
+                      <li class="v" v="obv">OBV</li>
+                      <li class="v" v="rsi">RSI</li>
+                      <!--
+                      <li class="v hide" v="rbid_ratio">Bid Ratio</li>
+                      -->
+                      <li class="v" v="none" default="yes">None</li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="hide"><span id="change">0</span>秒前更新<span id="realtime_error" style="display:none">在 <abbr title="Realtime(WebSocket) connection failed. Orderbook update every 1 minute, Trades update every 10 seconds.">Slow Mode</abbr></span></div>
+
+          <div id="now"></div>
+        </div>
       </div>
     </div>
     <!-- /footer_outer -->

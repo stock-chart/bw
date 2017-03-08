@@ -273,7 +273,7 @@
             RM: "</table>",
             oj: "assist",
             di: "row",
-            XO: " - BitcoinWisdom",
+            XO: " - qkl123.com",
             UR: "<div>",
             AG: "min: ",
             vL: "振幅: ",
@@ -2772,7 +2772,6 @@
                         var n;
 
                         /* edit: 2017-03-08 */
-                        // 移除了UTC支持
                         n = new Date;
                         var y = n.getFullYear();
                         var m = n.getMonth() + 1;
@@ -2789,9 +2788,11 @@
                           (mm < 10 ? ('0' + mm) : mm) + ':' +
                           (s < 10 ? ('0' + s) : s)
                         );
-                        /* end edit: 2017-03-08 */
 
+                        // 移除了UTC支持
                         // return n = new Date, $r() ? pr.text(lr(n) + t.Du) : pr.text(lr(n))
+                        
+                        /* end edit: 2017-03-08 */
                     }
 
                     function fl(n) {
