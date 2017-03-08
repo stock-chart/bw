@@ -36,6 +36,40 @@ table.simple ul li {
   color: #fff;
 }
 
+.dropdown {
+  position: relative;
+}
+
+.dropdown .dropdown-menu {
+  list-style: none;
+  display: none;
+  width: 283px;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  border: 1px solid rgba(255, 255, 255, .125);
+  border-left-width: 0;
+  background-color: #000;
+}
+
+.dropdown .dropdown-menu a {
+  display: block;
+  height: 30px;
+  line-height: 28px;
+  padding: 0 8px;
+  border: 1px solid rgba(255, 255, 255, .125);
+  border-width: 0 0 0 1px;
+}
+
+.dropdown-hover .dropdown-menu {
+  display: block;
+}
+
+.horizontal-list li {
+  float: left;
+}
+
 #control {
   font-family: sans-serif!important;
   font-weight: 400;

@@ -4596,17 +4596,22 @@
                     initModalState(modal);
                   });
 
-                  history.listen(function(location, action) {
-                    console.info(location, location.path);
-                  });
+                  history
+                    .listen(function(location, action) {
+                      console.info(location, location.path);
+                    });
 
-                  $symbolToggler.on('click', handleSymbolToggler);
+                  $symbolToggler
+                    .on('click', handleSymbolToggler);
 
-                  $modalToggler.on('click', handleModalToggle);
+                  $modalToggler
+                    .on('click', handleModalToggle);
 
-                  $modalDismiss.on('click', handleModalDismiss);
+                  $modalDismiss
+                    .on('click', handleModalDismiss);
 
-                  $drawlineToggler.on('click', handleDrawlineToggle);
+                  $drawlineToggler
+                    .on('click', handleDrawlineToggle);
 
                   function handleSymbolToggler(e) {
                     e.preventDefault();
