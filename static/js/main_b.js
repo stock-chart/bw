@@ -1,7 +1,4 @@
-
-
-/* Copyright 2013-2014 BitcoinWisdom All rights reserved */
-(function() {
+;(function() {
     var n = function(n) {
             var t, e, r, o, i;
             for (r = "", e = o = 0, i = n.length; i > o; e = ++o) t = n[e], r += String.fromCharCode(102 ^ t.charCodeAt(0));
@@ -2773,7 +2770,28 @@
                 $(function() {
                     function cl() {
                         var n;
-                        return n = new Date, $r() ? pr.text(lr(n) + t.Du) : pr.text(lr(n))
+
+                        /* edit: 2017-03-08 */
+                        // 移除了UTC支持
+                        n = new Date;
+                        var y = n.getFullYear();
+                        var m = n.getMonth() + 1;
+                        var d = n.getDate();
+                        var h = n.getHours();
+                        var mm = n.getMinutes();
+                        var s = n.getSeconds();
+
+                        pr.text(
+                          y + '/' +
+                          (m < 10 ? ('0' + m) : m) + '/' +
+                          (d < 10 ? ('0' + d) : d) + ' ' +
+                          (h < 10 ? ('0' + h) : h) + ':' +
+                          (mm < 10 ? ('0' + mm) : mm) + ':' +
+                          (s < 10 ? ('0' + s) : s)
+                        );
+                        /* end edit: 2017-03-08 */
+
+                        // return n = new Date, $r() ? pr.text(lr(n) + t.Du) : pr.text(lr(n))
                     }
 
                     function fl(n) {
@@ -2827,11 +2845,10 @@
                     function Fl() {
                         var n, e, r, o, i, u, l, a, s, c;
                         // Eu = window
-                        var userbarWidth = document.getElementById('J__userbar').clientWidth;
 
                         /* edit 2017-03-08 */
-                        console.info('=*>', Eu, Ou, Mu, Si);
-                        console.warn('=&>', ku, Vu, ki);
+                        var userbarWidth = document.getElementById('J__userbar').clientWidth;
+
                         if (
                             Si = Eu/* window */.width() - Ou/* #sidebar_router */.width() - Mu.width()/* Added 2017-03-08 */ - userbarWidth/* userbar.width */,
                             ki = Eu.height() - ku.height() - Vu.height(),

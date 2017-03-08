@@ -3,6 +3,29 @@ body {
   overflow: hidden;
 }
 
+#loading,
+.notify {
+  font-size: 14px;
+  top: 50px;
+}
+
+#loading .inner,
+.notify .inner {
+  color: #000;
+  line-height: 1.25;
+  padding: 5px 4px 3px;
+  border-radius: 0;
+  background-color: #e9ac38;
+}
+
+#footer {
+  height: 25px;
+  line-height: 25px;
+  background-color: #000;
+  position: relative;
+  z-index: 99;
+}
+
 .main-wrapper {
   margin-right: 50px;
 }
