@@ -157,6 +157,21 @@ table.simple ul li {
   padding: 10px;
 }
 
+.modal .body table {
+  width: 100%;
+}
+
+.modal .body table th a {
+  color: #fff;
+}
+
+.markets-modal {
+}
+
+.markets-modal .body table {
+  width: 100%;
+}
+
 .drawline {
   position: absolute;
   top: 0;

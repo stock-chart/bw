@@ -4545,13 +4545,44 @@
 
                 // =============================================================================================
                 //
-                /* qkl123.com */
-                // ====================================================================================================
+                // /* qkl123.com */
+                //
+                // =============================================================================================
+                // 
+                // var defaultApiSymbol = 'okcoin_btc_cny';
+                // var apiSymbol;
+                //
+                // 所有交易对的映射
+                // var tradeKeys = {
+                //   // hash URL        API symbol
+                //   'okcoinbtccny': 'okcoin_btc_cny',
+                //   'okcoinltccny': 'okcoin_ltc_cny',
+                // }
+                //
+                // history.listen(function(location) {
+                //   var key = tradeKeys[location.hash];
+                //
+                //   if (key) {
+                //     apiSymbol = key;
+                //   } else {
+                //     apiSymbol = defaultApiSymbol;
+                //     Alert.show('很抱歉，找不到匹配的交易对.');
+                //   }
+                //
+                //   request(apiSymbol);
+                // });
+                //
+                // =============================================================================================
                 ;(function() {
 
                   var $window = $(window);
+
+                  var History = $window[0].History;
+                  var history = History.createBrowserHistory();
+
                   var $body = $('body');
                   var $modal = $('.modal');
+                  var $symbolToggler = $('[data-toggle="symbol"]');
                   var $modalToggler = $('[data-toggle="modal"]');
                   var $modalDismiss = $('[data-toggle="dismiss"]');
                   var $backdrop = $('<div class="backdrop" />');
@@ -4565,11 +4596,23 @@
                     initModalState(modal);
                   });
 
+                  history.listen(function(location, action) {
+                    console.info(location, location.path);
+                  });
+
+                  $symbolToggler.on('click', handleSymbolToggler);
+
                   $modalToggler.on('click', handleModalToggle);
 
                   $modalDismiss.on('click', handleModalDismiss);
 
                   $drawlineToggler.on('click', handleDrawlineToggle);
+
+                  function handleSymbolToggler(e) {
+                    e.preventDefault();
+                    console.log(e.target.hash);
+                    history.push('/' + $(e.target).data('symbol'));
+                  }
 
                   function initModalState(modal) {
                     var $modal = $(modal);
