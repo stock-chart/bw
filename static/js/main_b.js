@@ -2827,8 +2827,22 @@
                     function Fl() {
                         var n, e, r, o, i, u, l, a, s, c;
                         // Eu = window
-                        if (Si = Eu/* window */.width() - Ou/* #sidebar_router */.width() - Mu.width(), ki = Eu.height() - ku.height() - Vu.height(), Oi.width !== Si || Oi.height !== ki)
-                            for (yu.css(t.NO, Si - 8), Iu.height(ki), c = [Oi, Bi, Ri], a = 0, s = c.length; s > a; a++) e = c[a], e.width = Si, e.height = ki;
+                        var userbarWidth = document.getElementById('J__userbar').clientWidth;
+
+                        /* edit 2017-03-08 */
+                        console.info('=*>', Eu, Ou, Mu, Si);
+                        console.warn('=&>', ku, Vu, ki);
+                        if (
+                            Si = Eu/* window */.width() - Ou/* #sidebar_router */.width() - Mu.width()/* Added 2017-03-08 */ - userbarWidth/* userbar.width */,
+                            ki = Eu.height() - ku.height() - Vu.height(),
+                            Oi.width !== Si || Oi.height !== ki
+                        ) {
+                            for (yu.css(t.NO, Si - 8), Iu.height(ki), c = [Oi, Bi, Ri], a = 0, s = c.length; s > a; a++) {
+                              e = c[a], e.width = Si, e.height = ki;
+                            }
+                        }
+                        /* edit 2017-03-08 */
+
                         return null == g && (g = Fu.outerHeight(!0)), o = g + 26 - ki, o > 0 ? (i = 15 - Math.ceil(o / 26), 2 > i && (i = 2)) : i = 15, u = 13 * i, Ut = i, $t = !1, ql(), $t = !0, $(t.Ll).height(u), $(t.NL).css(t.xm, 13 * (i - 15)), $(t.NJ).css(t.xm, 13 * (i - 15)), l = ki - Fu.outerHeight(!0), Ru.height(l), uu = Math.floor(ki / 6 - Rr), $i = Math.floor((Si - xi) / Ti), wi = Math.floor((Si - xi) / Ti), Su.css(t.vs, uu + 16), Er ? (n = Er[w], r = Yt(n, T).length - 1, ho = r, null != Ci ? Ci -= wi - Cu : Ci = r - wi + 1, 0 > Ci && (Ci = 0), Ci + wi > r && (Ci = r - wi + 1), Cu = wi, ul(), Il(), !0) : void 0
                     }
 
@@ -3660,7 +3674,18 @@
                             bids: $(t.aE),
                             gasks: $(t.Pl),
                             gbids: $(t.RJ)
-                        }, Ei = Ru[0], Oi = $(t.IE/* #canvas_main */)[0], Bi = $(t.CA)[0], Ri = $(t.Nt)[0], !Oi.getContext) return Iu.html(t.Xu), void 0;
+                        }, Ei = Ru[0],
+                            
+                            /* edit: 2017-03-08 */
+                            Oi = $(t.IE/* #canvas_main */)[0],
+                            Bi = $(t.CA)[0],
+                            Ri = $(t.Nt)[0],
+                            !Oi.getContext
+                          )/* if() {} */ return Iu.html(t.Xu), void 0;
+
+                            /* end edit: 2017-03-08 */
+
+
                     Ii = Oi.getContext(t.Pg), _i = Bi.getContext(t.Pg), Xi = Ri.getContext(t.Pg), nu = Mu.width(), qt = !0, qt = -1 === $theme_name.indexOf(t.tz), qt = !0, Mr = null, mo = null,
                         function() {
                             function n(n) {
@@ -4653,8 +4678,6 @@
 
                     Eu.trigger('resize');
                   }
-
-
 
                   /*------------------- Market Depth -----------------------*/
                   ;(function() {
