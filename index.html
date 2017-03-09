@@ -84,7 +84,23 @@
     <section class="modal" id="J__indicators">
       <div class="header"><button class="close" data-toggle="dismiss">&times;</button><div>指标</div></div>
       <div class="body">
-        indicators...
+        <table class="nowrap simple conf">
+          <tr class="o" o="indicator">
+            <td>
+              <ul>
+                <li class="v" v="macd">MACD</li>
+                <li class="v" v="kdj">KDJ</li>
+                <li class="v" v="stoch_rsi">StochRSI</li>
+                <li class="v" v="dmi">DMI</li>
+                <li class="v" v="cmf">CMF</li>
+                <li class="v" v="obv">OBV</li>
+                <li class="v" v="rsi">RSI</li>
+                <li class="v hide" v="rbid_ratio">Bid Ratio</li>
+                <li class="v" v="none" default="yes">None</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
       </div>
     </section>
 
@@ -93,7 +109,7 @@
       <div class="body">
         <table class="nowrap simple conf">
           <tr class="o" o="main_lines">
-            <td>Main Indicator</td>
+            <td>主指标</td>
             <td>
               <ul>
                 <li class="v" v="mas" default="yes">MA</li>
@@ -105,7 +121,7 @@
             </td>
           </tr>
           <tr class="o" o="stick_style">
-            <td>Chart Style</td>
+            <td>主图类型</td>
             <td>
               <ul>
                 <li class="v" v="candle_stick">CandleStick</li>
@@ -127,32 +143,16 @@
               </ul>
             </td>
           </tr>
-          <tr class="o" o="indicator">
-            <td>Indicator</td>
-            <td>
-              <ul>
-                <li class="v" v="macd">MACD</li>
-                <li class="v" v="kdj">KDJ</li>
-                <li class="v" v="stoch_rsi">StochRSI</li>
-                <li class="v" v="dmi">DMI</li>
-                <li class="v" v="cmf">CMF</li>
-                <li class="v" v="obv">OBV</li>
-                <li class="v" v="rsi">RSI</li>
-                <li class="v hide" v="rbid_ratio">Bid Ratio</li>
-                <li class="v" v="none" default="yes">None</li>
-              </ul>
-            </td>
-          </tr>
           <tr class="o" o="scale">
-            <td>Scale</td>
+            <td>坐标比例</td>
             <td>
               <ul>
-                <li class="v" v="normal">Linear</li>
-                <li class="v" v="logarithmic">Logarithmic</li>
+                <li class="v" v="normal">线性</li>
+                <li class="v" v="logarithmic">对数</li>
               </ul>
             </td>
           </tr>
-          <tr class="o" o="depth_range">
+          <tr class="o hide" o="depth_range">
             <td>Depth Range<abbr title="Show the depth hints until bid or ask is less or more than average order price n%">?</abbr></td>
             <td>
               <ul>
@@ -164,7 +164,7 @@
               </ul>
             </td>
           </tr>
-          <tr class="o" o="volume_currency">
+          <tr class="o hide" o="volume_currency">
             <td>Volume Currency</td>
             <td>
               <ul>
@@ -182,7 +182,7 @@
               </ul>
             </td>
           </tr>
-          <tr class="o" o="chart_range">
+          <tr class="o hide" o="chart_range">
             <td>Chart Range<abbr title="Limit chart&#039;s price range. It&#039;s helpful when extream long candlestick makes chart unreadable.">?</abbr></td>
             <td>
               <ul>
