@@ -75,7 +75,7 @@
             IP: "<br> From",
             bJ: "<div class=\"ok\">",
             YJ: "successfully.</div>",
-            Qe: "Consolas, Monospace",
+            Qe: "Monospace",
             vd: "<div class=\"ok\">正在加载...</div>",
             we: "bids",
             Sg: "rgba(255,64,64,0.2)",
@@ -167,7 +167,7 @@
             RH: "<div><a>",
             Np: "Border",
             Bu: "#market_",
-            Qf: "Arial, sans",
+            Qf: "sans-serif",
             XM: "o",
             NN: "#market",
             Qm: "stick_style",
@@ -236,7 +236,7 @@
             Rq: "input[name=recover_password]",
             Tg: "unit_k",
             Ff: n(""),
-            nr: "10px Consolas, Monospace",
+            nr: "10px Monospace",
             Xl: ": ",
             hK: "rgba(255,255,255,0.8)",
             VA: "<div class=\"text\">",
@@ -266,7 +266,7 @@
             Wy: " will receive <span class=\"red\">",
             mr: "indicator:",
             Va: "<g>$&</g>",
-            bF: "V: ",
+            bF: "交易量: ",
             TI: "_avg_p",
             fO: "</g>",
             Bf: "active",
@@ -313,7 +313,7 @@
             Ym: "&label=BitcoinWisdom",
             rC: "------",
             wi: "cached txes length: ",
-            Xu: "<div style=\"margin:6px\"><div>Sorry, your browser doesn't support BitcoinWisdom.</div><dl><dt>Minimum requirements:</dt><dd>IE 9+, Chrome, Firefox or other modern browser.</dd><dt>Recommaned requirements:</dt><dd>IE 10+, Chrome, Firefox or other modern browser.</dd><dt>Remarks:</dt><dd>IE 9 won't support Realtime mode</dd></div>",
+            Xu: "<div style=\"margin:6px\"><div>抱歉，你的浏览器暂不支持，请升级.</div><dl><dt>支持最低的版本:</dt><dd>IE 9+, 谷歌浏览器, 火狐或其他现代浏览器.</dd><dt>推荐浏览器:</dt><dd>IE 10+, 谷歌浏览器, 火狐.</dd></div>",
             nU: "sorted txes length: ",
             Bs: "#btn_settings",
             ur: "depth cache length ",
@@ -389,7 +389,7 @@
             Re: "<div class=\"ok\">Logout successful.</div>",
             Ns: "#A6CEE3",
             hy: "?",
-            Ja: "10px Arial, Sans",
+            Ja: "10px Sans-serif",
             pj: "#1F78B4",
             gb: "#B2DF8A",
             Mm: "#633",
@@ -478,7 +478,12 @@
             QO: "rt ok",
             sN: ".qr",
             uj: "#clear_low_price",
-            th: "<span class=\"eprice\">",
+
+            /* MODIFIED 2017-03-09 */
+            // th: "<span class=\"eprice\">",
+            th: "<span class=\"e price\">",
+            /* MODIFIED 2017-03-09 */
+
             QU: "data",
             ef: ".content_security .display_name",
             Pn: "#asks div",
@@ -715,9 +720,9 @@
             DA: "/depth?symbol=",
             Mu: "ticker_red",
             Os: "kdj_params",
-            wz: "grey",
-            IZ: "red",
-            fJ: "green",
+            wz: " grey",
+            IZ: " red",
+            fJ: " green",
             fG: "background-color",
             Ss: "#363",
             Py: "#trades",
@@ -726,7 +731,13 @@
             Nu: "line_o",
             BU: "normal",
             LA: "#F66",
+
+
+            /* MODIFIED 2017-03-09 */
             UX: "<div class=\"text\">加载失败, 5秒种之后刷新.</div><dl class=\"reason\"><dt>可能的原因</dt><dd>区块链123暂时无法链接.</dd><dd>域名不是qkl123.com</dd><dd>网络错误</dd><dl>",
+            /* MODIFIED 2017-03-09 */
+
+
             Xg: "passport",
             vn: "simple",
             SR: "#switch_theme",
@@ -2771,7 +2782,7 @@
                     function cl() {
                         var n;
 
-                        /* edit: 2017-03-08 */
+                        /* MODIFED: 2017-03-08 */
                         n = new Date;
                         var y = n.getFullYear();
                         var m = n.getMonth() + 1;
@@ -2792,7 +2803,7 @@
                         // 移除了UTC支持
                         // return n = new Date, $r() ? pr.text(lr(n) + t.Du) : pr.text(lr(n))
                         
-                        /* end edit: 2017-03-08 */
+                        /* MODIFIED: 2017-03-08 */
                     }
 
                     function fl(n) {
@@ -2846,8 +2857,14 @@
                     function Fl() {
                         var n, e, r, o, i, u, l, a, s, c;
                         // Eu = window
+                        
+                        /* MODIFIED 2017-03-09 */
+                        var marketDepth = document.getElementById('J__market-depth');
+                        var marketDepthHeight = marketDepth.clientHeight;
+                        /* MODIFIED 2017-03-09 */
 
-                        /* edit 2017-03-08 */
+
+                        /* MODIFIED 2017-03-08 */
                         var userbarWidth = document.getElementById('J__userbar').clientWidth;
 
                         if (
@@ -2859,9 +2876,17 @@
                               e = c[a], e.width = Si, e.height = ki;
                             }
                         }
-                        /* edit 2017-03-08 */
+                        /* MODIFIED 2017-03-08 */
 
-                        return null == g && (g = Fu.outerHeight(!0)), o = g + 26 - ki, o > 0 ? (i = 15 - Math.ceil(o / 26), 2 > i && (i = 2)) : i = 15, u = 13 * i, Ut = i, $t = !1, ql(), $t = !0, $(t.Ll).height(u), $(t.NL).css(t.xm, 13 * (i - 15)), $(t.NJ).css(t.xm, 13 * (i - 15)), l = ki - Fu.outerHeight(!0), Ru.height(l), uu = Math.floor(ki / 6 - Rr), $i = Math.floor((Si - xi) / Ti), wi = Math.floor((Si - xi) / Ti), Su.css(t.vs, uu + 16), Er ? (n = Er[w], r = Yt(n, T).length - 1, ho = r, null != Ci ? Ci -= wi - Cu : Ci = r - wi + 1, 0 > Ci && (Ci = 0), Ci + wi > r && (Ci = r - wi + 1), Cu = wi, ul(), Il(), !0) : void 0
+                        return null == g && (g = Fu.outerHeight(!0)), o = g + 26 - ki, o > 0 ? (i = 15 - Math.ceil(o / 26), 2 > i && (i = 2)) : i = 15, u = 13 * i, Ut = i, $t = !1, ql(), $t = !0, $(t.Ll).height(u), $(t.NL).css(t.xm, 13 * (i - 15)), $(t.NJ).css(t.xm, 13 * (i - 15)),
+                        
+                        /* MODIFIED 2017-03-09 */
+                        /* 交易列表的高度 */
+                        l = ki - Fu.outerHeight(!0),
+                        Ru.height(l - marketDepthHeight),
+                        /* MODIFIED 2017-03-09 */
+                        
+                        uu = Math.floor(ki / 6 - Rr), $i = Math.floor((Si - xi) / Ti), wi = Math.floor((Si - xi) / Ti), Su.css(t.vs, uu + 16), Er ? (n = Er[w], r = Yt(n, T).length - 1, ho = r, null != Ci ? Ci -= wi - Cu : Ci = r - wi + 1, 0 > Ci && (Ci = 0), Ci + wi > r && (Ci = r - wi + 1), Cu = wi, ul(), Il(), !0) : void 0
                     }
 
                     function xl() {
@@ -2942,7 +2967,7 @@
                             else if ($i >= Wi) {
                                 if (Y = t.BV, $ = t.BV, null != ol[T]) {
 
-                                    /* edit 2017-03-06 */
+                                    /* MODIFIED 2017-03-06 */
                                     if (
                                         /*---------------- if conditions -------------------*/
                                         Q = Dt(c, Ci + Wi - 1, k),
@@ -2977,7 +3002,7 @@
                                         for (A in ut) so.call(ut, A) && (a = ut[A], (c = null != a ? null != (et = a[Io]) ? et[w] : void 0 : void 0) && (D = Yt(c, J), Mi[t.WS] ? (z = null != (rt = S[l][A]) ? null != rt[tt = Io + t.TC + mi] ? rt[tt = Io + t.TC + mi] : rt[tt] = Ct(c, [P, H, T]) : void 0, f = Yt(c, z)[0], o = ol[Er[mi]]) : (f = Yt(c, T), o = ol[T]), U = (ol[J] - D[0]) / Io, W = f[U], E = S[t.Wi] ? o / W / S[t.Wi] - 1 : o / W - 1, Y = (t.lI + ir(ol[V]) + t.ou + $symbol + t.Xl + Vl(o) + t.ou + A + t.Xl + Vl(W)).split(t.ou)))
                                     }
 
-                                    /* edited 2017-03-06 */
+                                    /* MODIFED 2017-03-06 */
 
                                     F = function() {
                                         var n, e, r;
@@ -3162,16 +3187,57 @@
                         function o() {
                             return r(null, l)
                         }
+
+                        /* MODIFIED 2017-03-09 */
+                        /* Period API 请求 */
                         var i, u, l, a;
-                        ru(t.AL + qu[n]), Ur[n] && !Ur[n].is_simple ? Kr(16, function() {
+
+                        ru(t.AL + qu[n]),
+                        
+                        Ur[n] && !Ur[n].is_simple ?
+
+                        Kr(16, function() {
                             l = Ur[n], to = n, qr = no[n], o()
-                        }) : (ru(t.rK + qu[n]), a = {
+                        }) :
+
+                        (/* START */
+
+                         ru(t.rK + qu[n]),
+                         a = {
                             step: n,
                             sid: e,
                             symbol: $symbol.toLowerCase()
-                        }, Pl(), !to && 180 > Si / Ti && (a[t.Ls] = t.vn), rr(t.LY + $ssl + t.YT + $host + t.Vg, a, function() {
-                            return u = arguments[0], i = arguments[1], Bl(), u ? r(u) : i ? (i = nr(i, n), to = n, qr = no[n] = i, Yl(), l = Ur[n], l.is_simple = a[t.Ls] === t.vn, o(), void 0) : r(new Error(t.UN))
-                        }))
+                         },
+
+                         Pl(),
+
+                         !to && 180 > Si / Ti && (a[t.Ls] = t.vn),
+                         
+                         console.log(t.LY, '/', $ssl, '/', t.YT, '/', $host, '/', t.Vg, '/', a),
+                         
+                         rr(
+                           t.LY + $ssl + t.YT + $host + t.Vg,
+                           a,
+
+                           function() {
+                             return u = arguments[0],
+                             i = arguments[1],
+                             Bl(),
+
+                             /* STATEMENT */
+                             u ?
+                             r(u) :
+                             (
+                               i ?
+                               (i = nr(i, n), to = n, qr = no[n] = i, Yl(), l = Ur[n], l.is_simple = a[t.Ls] === t.vn, o(), void 0) :
+                               r(new Error(t.UN))
+                             )
+                             /* STATEMENT */
+                           }
+                         )
+                        
+                        /* END */)
+                        /* MODIFIED 2017-03-09 */
                     }
 
                     function Yl(n) {
@@ -3694,14 +3760,14 @@
                             gbids: $(t.RJ)
                         }, Ei = Ru[0],
                             
-                            /* edit: 2017-03-08 */
+                            /* MODIFIED: 2017-03-08 */
                             Oi = $(t.IE/* #canvas_main */)[0],
                             Bi = $(t.CA)[0],
                             Ri = $(t.Nt)[0],
                             !Oi.getContext
                           )/* if() {} */ return Iu.html(t.Xu), void 0;
 
-                            /* end edit: 2017-03-08 */
+                            /* MODIFIED: 2017-03-08 */
 
 
                     Ii = Oi.getContext(t.Pg), _i = Bi.getContext(t.Pg), Xi = Ri.getContext(t.Pg), nu = Mu.width(), qt = !0, qt = -1 === $theme_name.indexOf(t.tz), qt = !0, Mr = null, mo = null,
@@ -4718,7 +4784,7 @@
                     });
 
                     var $graph = $('#J__market-depth-graph');
-                    $graph.css('height', 240);
+                    $graph.css('height', $('#J__market-depth').height());
 
                     $graph.highcharts({
                       chart: {

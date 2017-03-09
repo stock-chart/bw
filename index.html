@@ -19,7 +19,7 @@
         return r
       }
 
-      console.log('==>', n("F"));
+      console.log('==>', n("ZXB@ZIX"));
     }());
     </script>
 	</head>
@@ -208,16 +208,15 @@
       </div>
     </section>
 
-    <section id="warning" style="position: fixed; opacity: 0">
+    <section id="J__warning" style="position: fixed; opacity: 0">
       <div id="warning"></div>
     </section>
 
-    <section id="qr" style="position: fixed; opacity: 0">
+    <section id="J__qr" style="position: fixed; opacity: 0">
       <div id="qr"><img /></div>
     </section>
 
     <section class="drawline" id="J__drawline">
-      <div class="hint hide">点击左键 - 添加点/线<br />点击右键 - 移除线</div>
       <div class="hide" id="drawing">
         <div class="unsel">
           <span>Drawing</span>
@@ -228,10 +227,8 @@
         </div>
         <div id="drawings" class="hint"></div>
       </div>
-
       <ul class="modes">
         <li class="hide" id="mode"></div>
-
         <li>
           <a id="mode_cross" class="mode selected" title="Cross Cursor" mode="cross">
             <img src="/img/shape-cross.png" />
@@ -253,7 +250,6 @@
           </a>
           <span id="drawing_status"></span>
         </li>
-
         <li><a class="mode" mode="draw_line" title="Snap"><span class="fa fa-pencil"></span></a></li>
         <li><a class="mode" mode="draw_fline" title="Free"><span class="fa fa-pencil"></span></a></li>
         <li><a class="mode" mode="draw_fhline" title="Draw Fibonacci Retracements"><span class="fa fa-pencil"></span></a></li>
@@ -393,10 +389,11 @@
               </div>
               <!-- /before_trades -->
 
-              <div id="J__market-depth">
+              <div id="trades"></div>
+
+              <div class="market-depth" id="J__market-depth">
                 <div id="J__market-depth-graph"></div>
               </div>
-              <div id="trades" style="display: none;"></div>
 
             </div>
           </div>
@@ -491,7 +488,13 @@
     ;(function() {
       var tradesKey = {
         'bitfinexbtcusd': 'Bitfinex BTC/USD',
-        'poloniexxmrbtc': 'Poloniex XMR/BTC'
+        'poloniexxmrbtc': 'Poloniex XMR/BTC',
+        'btccbtccny': 'BTCC BTC/CNY',
+        'btccltccny': 'BTCC LTC/CNY',
+        'okcoinbtccny': 'OKcoin BTC/CNY',
+        'okcoinltccny': 'OKcoin LTC/CNY',
+        'huobibtccny': 'Huobi BTC/CNY',
+        'huobiltccny': 'Huobi LTC/CNY'
       };
 
       window.$sid = '5a34ec75';
@@ -500,7 +503,7 @@
       window.$ssl = 's';
       window.$host = 's2.bitcoinwisdom.com';
       window.$test = false;
-      window.$symbol = location.hash.split('#')[1] || 'bitfinexbtcusd';
+      window.$symbol = location.pathname.substring(1) || 'bitfinexbtcusd';
       window.$hsymbol = tradesKey[window.$symbol];
       window.$theme_name = 'dark';
       window.$debug = false;

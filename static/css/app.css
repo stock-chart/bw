@@ -513,13 +513,13 @@ button, select {
 }
 
 .dark #trades {
-	scrollbar-basecolor: #333;
-	scrollbar-highlight-color: #CCC;
-	scrollbar-shadow-color: #666;
+	scrollbar-basecolor: #222;
+	scrollbar-highlight-color: #2f2f2f;
+	scrollbar-shadow-color: #333;
 }
 
 .dark :-webkit-scrollbar {
-	background-color: #333;
+	background-color: #222;
 }
 
 .dark g {
@@ -656,8 +656,8 @@ button, select {
 }
 
 .dark ::-webkit-scrollbar {
-	width: 16px;
-	height: 13px;
+	width: 5px;
+	height: 10px;
 }
 
 .dark ::-webkit-scrollbar-button:start:decrement, .dark ::-webkit-scrollbar-button:end:increment {
