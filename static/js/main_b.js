@@ -259,7 +259,7 @@
             Vj: "switch failed ",
             WE: "Buy <span class=yellow>",
             fX: "#slot_hash_rate",
-            Vg: "/period",
+            Vg: "/getKline.php",
             ZD: "getDate",
             Ve: "input[name=",
             GL: "]",
@@ -3204,14 +3204,17 @@
 
                          ru(t.rK + qu[n]),
                          a = {
+
+                            /* MODIFIED 移除其他参数 */
                             step: n,
                             sid: e,
                             symbol: $symbol.toLowerCase()
+                            /* MODIFIED */
                          },
 
                          Pl(),
 
-                         !to && 180 > Si / Ti && (a[t.Ls] = t.vn),
+                         !to && 180 > Si / Ti && (a[t.Ls] = t.vn, console.log('::>', a)),
                          
                          console.log(t.LY, '/', $ssl, '/', t.YT, '/', $host, '/', t.Vg, '/', a),
                          
