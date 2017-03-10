@@ -4698,6 +4698,7 @@
                   var $drawlineToggler = $('[data-toggle="drawline"]');
                   var $drawlinePanel = $('#J__drawline');
                   var $container = $('#J__container');
+                  var $tabTrigger = $('[data-toggle="tab"]');
 
                   var duration = 100;
 
@@ -4721,6 +4722,8 @@
 
                   $drawlineToggler
                     .on('click', handleDrawlineToggle);
+
+                  $tabTrigger.on('click', handleTabToggle);
 
                   function handleSymbolToggler(e) {
                     e.preventDefault();
@@ -4761,6 +4764,25 @@
                     $container.css('margin-left', marginLeft);
 
                     Eu.trigger('resize');
+                  }
+
+                  function handleTabToggle(e) {
+                    e.preventDefault();
+
+                    var $this = $(e.currentTarget);
+                    var $parent = $this.parent('li');
+                    var target = $this.attr('href');
+
+                    $parent
+                      .siblings('li')
+                        .removeClass('active')
+                        .end()
+                      .addClass('active');
+                    $('[data-panel="' + target + '"]')
+                      .siblings('.tab-panel')
+                        .hide()
+                        .end()
+                      .show();
                   }
 
                   /*------------------- Market Depth -----------------------*/

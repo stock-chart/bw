@@ -355,7 +355,15 @@
 
           <!-- sidebar_outer -->
           <div id="sidebar_outer">
-            <div id="sidebar">
+
+            <!-- #J__user -->
+            <div class="tab-panel" data-panel="#J__user">
+              user...
+            </div>
+            <!-- /#J__user -->
+
+            <!-- #J__trades -->
+            <div class="tab-panel active" id="sidebar" data-panel="#J__trades">
 
               <!-- before_trades -->
               <div id="before_trades">
@@ -396,6 +404,26 @@
               </div>
 
             </div>
+            <!-- /#J__trades -->
+
+            <!-- #J__alert -->
+            <div class="tab-panel" data-panel="#J__alert">
+              alert...
+            </div>
+            <!-- /#J__alert -->
+
+            <!-- #J__feeds -->
+            <div class="tab-panel" data-panel="#J__feeds">
+              feeds...
+            </div>
+            <!-- /#J__feeds -->
+
+            <!-- #J__chat -->
+            <div class="tab-panel" data-panel="#J__chat">
+              chat room...
+            </div>
+            <!-- /#J__chat -->
+
           </div>
           <!-- sidebar_outer -->
 
@@ -419,10 +447,11 @@
       <!-- userbar -->
       <div id="J__userbar" class="userbar">
         <ul class="list-unstyled">
-          <li><a href="javascript:;"><span class="fa fa-user-circle"></span></a></li>
-          <li><a href="javascript:;"><span class="fa fa-area-chart"></span></a></li>
-          <li><a href="javascript:;"><span class="fa fa-commenting"></span></a></li>
-          <li><a href="javascript:;"><span class="fa fa-database"></span></a></li>
+          <li><a href="#J__user" data-toggle="tab"><span class="fa fa-user-circle-o"></span></a></li>
+          <li class="active"><a href="#J__trades" data-toggle="tab"><span class="fa fa-list-ol"></span></a></li>
+          <li><a href="#J__alert" data-toggle="tab"><span class="fa fa-bell-o"></span></a></li>
+          <li><a href="#J__feeds" data-toggle="tab"><span class="fa fa-newspaper-o"></span></a></li>
+          <li><a href="#J__chat" data-toggle="tab"><span class="fa fa-commenting"></span></a></li>
         </ul>
       </div>
       <!-- /userbar -->

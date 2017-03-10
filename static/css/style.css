@@ -3,6 +3,18 @@ body {
   overflow: hidden;
 }
 
+.tab-panel {
+  display: none;
+  width: 220px;
+  height: 100%;
+  padding-left: 6px;
+  border-left: 1px solid #333;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
 #loading,
 .notify {
   font-size: 14px;
@@ -53,6 +65,12 @@ body {
   height: 100%;
   width: 50px;
   border-left: 1px solid #333;
+}
+
+.userbar li.active a {
+  color: #f60!important;
+  background-color: rgba(255, 255, 255, .1);
+  box-shadow: inset 12px 0 15px rgba(0, 0, 0, 1);
 }
 
 .userbar a {
