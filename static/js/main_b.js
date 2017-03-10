@@ -4725,6 +4725,10 @@
 
                   $tabTrigger.on('click', handleTabToggle);
 
+                  $('#id__ex, #id__coin').select2({
+                    minimumResultsForSearch: -1
+                  });
+
                   function handleSymbolToggler(e) {
                     e.preventDefault();
                     console.log(e.target.hash);
@@ -4784,6 +4788,7 @@
                         .end()
                       .show();
                   }
+
 
                   /*------------------- Market Depth -----------------------*/
                   ;(function() {
