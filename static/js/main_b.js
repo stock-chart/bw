@@ -259,7 +259,10 @@
             Vj: "switch failed ",
             WE: "Buy <span class=yellow>",
             fX: "#slot_hash_rate",
-            Vg: "/getKline.php",
+
+            // Vg: "/getKline.php",
+            Vg: "/kline",
+
             ZD: "getDate",
             Ve: "input[name=",
             GL: "]",
@@ -292,7 +295,7 @@
             Vm: "load ",
             XN: "#mode_",
             RA: "login",
-            Jq: "retry after 5 seconds",
+            Jq: "5秒种之后重试",
             Oi: ".<br>",
             jF: "#333",
             er: "&sid=",
@@ -352,7 +355,7 @@
             vG: "hide_cursor",
             kn: "#dlg_estimate_trading",
             Za: "Background Mask",
-            bS: "minute",
+            bS: "分钟",
             MK: "Green",
             fK: "auto",
             UN: "error, history data is empty",
@@ -439,7 +442,7 @@
             RL: "selected",
             mM: "createGain",
             kY: ".rt",
-            GX: "/trades",
+            GX: "/getTrades.php",
             OM: "change",
             Ml: "button",
             Px: "#depth",
@@ -717,7 +720,7 @@
             HF: "#notify",
             YM: ".content_",
             mY: "success",
-            DA: "/depth?symbol=",
+            DA: "/getDepth.php?symbol=",
             Mu: "ticker_red",
             Os: "kdj_params",
             wz: " grey",
@@ -916,22 +919,58 @@
                     return o
                 }, rr = function() {
                     var n, e, r, o, i, u;
-                    return n = 1 <= arguments.length ? ao.call(arguments, 0) : [], e = n.pop(), i = n[0], r = n[1], null == r && (r = {}), i[i.length - 1] !== t.hy && (r.nonce = Date.now()), typeof XDomainRequest !== t.bQ && null !== XDomainRequest ? (i = -1 === i.indexOf(t.hy) ? i + t.hy + $.param(r) : i + t.JV + $.param(r), u = new XDomainRequest, u.open(t.Cx, i), u.onload = function() {
-                        return r = $.parseJSON(u.responseText), r ? e(null, r) : e(new Error(t.ZV), null)
-                    }, u.onerror = function() {
-                        return e(t.mi, null)
-                    }, u.ontimeout = function() {}, u.onprogress = function() {}, u.timeout = 6e4, u.send(), u) : (o = $.ajax({
-                        url: i,
-                        type: t.Cx,
-                        dataType: t.TB,
-                        timeout: 6e4,
-                        data: r
-                    }), o.done(function(n) {
-                        return e(null, n)
-                    }), o.fail(function(n, r, o) {
-                        var i;
-                        return r === t.mi && (r = t.BV), i = o || r || t.BV, e(new Error(i), null)
-                    }))
+                    /* MODIFIED 2017-03-14 HTTPXMLRequest & ajax */
+                    return n = 1 <= arguments.length ? ao.call(arguments, 0) : [],
+                      e = n.pop(),
+                      i = n[0],
+                      r = n[1],
+
+                      null == r && (r = {}),
+
+                      i[i.length - 1] !== t.hy && (r.nonce = Date.now()),
+
+                      /* 2017-03-14 REMOVE properties: `sid` and `mode` */
+                      /*
+                      r = (function() {
+                        var ret = {};
+                        for (var prop in r) {
+                          if (!/sid|mode/.test(prop)) {
+                            ret[prop] = r[prop];
+                          }
+                        }
+                        return ret;
+                      }()),
+                      */
+                      /* 2017-03-14 REMOVE properties: `sid` and `mode` */
+
+                      typeof XDomainRequest !== t.bQ && null !== XDomainRequest ? (
+                          i = -1 === i.indexOf(t.hy) ? i + t.hy + $.param(r) : i + t.JV + $.param(r),
+                          u = new XDomainRequest,
+                          u.open(t.Cx, i),
+                          u.onload = function() {
+                              return r = $.parseJSON(u.responseText), r ? e(null, r) : e(new Error(t.ZV), null)
+                          }, u.onerror = function() {
+                              return e(t.mi, null)
+                          }, u.ontimeout = function() {},
+                          u.onprogress = function() {},
+                          u.timeout = 6e4,
+                          u.send(),
+                          u
+                      ) : (
+                        o = $.ajax({
+                          url: i,
+                          type: t.Cx,
+                          dataType: t.TB,
+                          timeout: 6e4,
+                          data: r
+                      }), o.done(function(n) {
+                          return e(null, n)
+                      }), o.fail(function(n, r, o) {
+                          var i;
+                          return r === t.mi && (r = t.BV), i = o || r || t.BV, e(new Error(i), null)
+                      })
+                    )
+                    /* MODIFIED 2017-03-14 HTTPXMLRequest & ajax */
                 }, Zr = function(n) {
                     var t;
                     return t = function() {
@@ -1027,6 +1066,8 @@
                 }
             }(), er = null,
             function() {
+
+                /* TODO: WebSocket */
                 return er = function(n, e) {
                     var r, o, i;
                     return typeof n === t.lB && (n = [n]), o = 0, (i = function() {
@@ -1067,7 +1108,10 @@
                             return i()
                         }))
                     }
-                }, er = er
+                },
+                /* TODO: WebSocket */
+
+                er = er
             }(), r = n = e = null, zt = re = At = jt = Gt = oe = te = qt = St = Zt = Pt = Ht = Lt = Jt = It = Ot = Rt = Xt = _t = Et = Nt = Ut = Bt = Wt = Ct = Mt = Dt = ne = Yt = Qt = Kt = ee = null,
             function() {
                 function o(n) {
@@ -1738,6 +1782,9 @@
                 var k;
                 return k = [], Ae = i, Ke = n, De = e, Ne = r, Ee = p, ze = d, We = v, Ze = g, Je = m, He = x, Pe = w, Oe = T, Re = V, Be = y, Le = h, Ue = f, Ce = o, Ye = l, Qe = u
             }(), dt = null,
+
+
+            /* TODO: */
             function() {
                 var n;
                 return n = function() {
@@ -1896,7 +1943,10 @@
                         return this.total
                     }, n
                 }(), dt = n, null != Xr && (dt = dt), typeof module !== t.bQ && null !== module ? module.exports = dt : void 0
-            }(), dr = pr = vr = or = ir = ur = lr = xr = yr = ar = sr = cr = hr = mr = fr = gr = Fr = br = null, g = null, tr = Fe = $r = null,
+            }(),
+            /* -- END -- */
+            
+            dr = pr = vr = or = ir = ur = lr = xr = yr = ar = sr = cr = hr = mr = fr = gr = Fr = br = null, g = null, tr = Fe = $r = null,
             function() {
                 function n(n) {
                     var e;
@@ -2099,15 +2149,23 @@
                     return m[O] = t[st] * t[lt], Gt(e, l, m)
                 }
 
+                /* TODO: 最终渲染K线的数据 */
                 function o(t, e) {
                     var r, o, i, u, l, a, s, d, m, x, y, w, T;
+
                     for (i = n(), r = i[c], u = a = 0, m = e.length; m > a; u = ++a) {
                         for (l = e[u], l = ue(l), l[B] = parseInt(l[B]), w = [F, f, v, g], s = 0, x = w.length; x > s; s++) o = w[s], l[o] = parseFloat(l[o]);
+
                         for (T = [B, p, b], d = 0, y = T.length; y > d; d++) o = T[d], l[o] = parseInt(l[o]);
-                        l[R] = parseFloat(l[R]), l[h] = new Date(1e3 * l[B]), Gt(r, u, l)
+
+                        l[R] = parseFloat(l[R]),
+                        l[h] = new Date(1e3 * l[B]),
+                        Gt(r, u, l);
                     }
+
                     return i[$] = parseInt(t), i
                 }
+                /* 最终渲染K线的数据 */
 
                 function i(n) {
                     var t, e;
@@ -2129,20 +2187,87 @@
                     var t, r;
                     return t = Dt(n[c], qt(n[c]) - 1, d), r = {}, r[ct] = parseInt(Date.now() / 1e3), r[ft] = t[b], r[st] = t[f], r[lt] = 0, e(n, r)
                 }
+
                 var a, s, c, f, h, d, p, v, b, g, F, $, B, O, R, E, N;
-                return E = m(3), c = E[0], b = E[1], $ = E[2], w = c, _ = b, Z = $, N = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], B = N[0], p = N[1], b = N[2], F = N[3], f = N[4], v = N[5], g = N[6], R = N[7], a = N[8], s = N[9], O = N[10], h = N[11], d = N, J = B, S = p, _ = b, X = F, T = f, M = v, I = g, H = R, V = h, k = d, x = a, y = s, P = O, xe = function(n, t) {
+                return E = m(3), c = E[0], b = E[1], $ = E[2], w = c, _ = b, Z = $, N = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], B = N[0], p = N[1], b = N[2], F = N[3], f = N[4], v = N[5], g = N[6], R = N[7], a = N[8], s = N[9], O = N[10], h = N[11], d = N, J = B, S = p, _ = b, X = F, T = f, M = v, I = g, H = R, V = h, k = d, x = a, y = s, P = O,
+                
+                /* TODO: MODIFIED 2017-03-17 */
+                xe = function(n, t) {
+
+                    // n = parseInt(Date.now() / 1e3)
                     var e;
-                    return e = 604800 === t ? n + 259200 - (n + 259200) % t - 259200 : n - n % t
-                }, nr = function(n, t) {
+
+                    // `604800` 周线步长时间
+                    return e = 604800 === t ?
+                      n + 259200 - (n + 259200) % t - 259200 :
+                      n - n % t
+                },
+
+                nr = function(n/* 原始数据 */, t/* 步长时间 */) {
                     var e, r, o, i, u, l, a, s;
-                    for (u = [], i = xe(parseInt(Date.now() / 1e3), t) - 900 * t, o = xe(parseInt(Date.now() / 1e3), t), a = 0, s = n.length; s > a; a++)
-                        if (e = n[a], !(e[J] < i)) {
-                            for (; r && e[J] - r[J] > t;) l = [], l[J] = r[J] + t, l[S] = r[_], l[_] = r[_], l[X] = r[T], l[M] = r[T], l[I] = r[T], l[T] = r[T], l[x] = 0, l[y] = 0, l[H] = 0, l[P] = 0, l[V] = l[J], u.push(l), r = l;
-                            u.push(e), r = e
-                        }
-                    for (e && e[J] < i && (e[J] = i); e && e[J] < o;) l = [], l[J] = e[J] + t, l[S] = e[_], l[_] = e[_], l[X] = e[T], l[M] = e[T], l[I] = e[T], l[T] = e[T], l[x] = 0, l[y] = 0, l[H] = 0, l[P] = 0, l[V] = l[J], u.push(l), e = l;
-                    return u
-                }, Er = n, Hr = e, Br = o, Nr = i, Rr = u, Pr = t, Or = l, nr = nr, xe = xe
+
+                    for (
+                      u = [],
+                      i = xe(parseInt(Date.now() / 1e3), t) - 900 * t,
+                      o = xe(parseInt(Date.now() / 1e3), t),
+                      a = 0,
+                      s = n.length; /* `n`为原始数据,`s`永远等于`n`的长度, 如:`200||900` */
+
+                      s > a;
+
+                      a++
+                    ) {
+                    /* ------------------ inside loop ------------------- */
+                      if (e = n[a], !(e[J] < i/* 时间戳小于`i`代表什么意思? */)) {
+
+                          // FIXME: 这里是什么意思？
+                          for (; r && e[J]/* 原始时间 */ - r[J]/* 原始时间 + 步长时间 */ > t;) {
+                            l = [],
+                            l[J/* 0 */] = r[J] + t,
+                            l[S/* 1 */] = r[_],
+                            l[_/* 2 */] = r[_],
+                            l[X/* 3 */] = r[T],
+                            l[M/* 5 */] = r[T],
+                            l[I/* 6 */] = r[T],
+                            l[T/* 4 */] = r[T],
+                            l[x/* 8 */] = 0,
+                            l[y/* 9 */] = 0,
+                            l[H/* 7 */] = 0,
+                            l[P/* 10 */] = 0,
+                            l[V/* 11 */] = l[J],
+                            u.push(l),
+                            r = l;
+                          }
+
+                          u.push(e), r = e/* `e = n[a]` */;
+                      }
+                    /* ------------------ inside loop ------------------- */
+                    }/* end loop */
+
+                    for (e && e[J] < i && (e[J] = i); e && e[J] < o;) {
+                      l = [],
+                      l[J/* 0 */] = e[J] + t,
+                      l[S/* 1 */] = e[_],
+                      l[_/* 2 */] = e[_],
+                      l[X/* 3 */] = e[T],
+                      l[M/* 5 */] = e[T],
+                      l[I/* 6 */] = e[T],
+                      l[T/* 4 */] = e[T],
+                      l[x/* 8 */] = 0,
+                      l[y/* 9 */] = 0,
+                      l[H/* 7 */] = 0,
+                      l[P/* 10 */] = 0,
+                      l[V/* 11 */] = l[J],
+                      u.push(l),
+                      e = l;
+                    }
+
+                    // 返回处理过的数据
+                    return u;
+                },
+                /* MODIFIED 2017-03-17 */
+                
+                Er = n, Hr = e, Br = o, Nr = i, Rr = u, Pr = t, Or = l, nr = nr, xe = xe
             }(), ft = st = lt = ct = at = ht = null, jr = zr = null,
             function() {
                 function n(n) {
@@ -2967,7 +3092,7 @@
                             else if ($i >= Wi) {
                                 if (Y = t.BV, $ = t.BV, null != ol[T]) {
 
-                                    /* MODIFIED 2017-03-06 */
+                                    /* TODO: MODIFIED 2017-03-06 */
                                     if (
                                         /*---------------- if conditions -------------------*/
                                         Q = Dt(c, Ci + Wi - 1, k),
@@ -3214,9 +3339,7 @@
 
                          Pl(),
 
-                         !to && 180 > Si / Ti && (a[t.Ls] = t.vn, console.log('::>', a)),
-                         
-                         console.log(t.LY, '/', $ssl, '/', t.YT, '/', $host, '/', t.Vg, '/', a),
+                         !to && 180 > Si / Ti && (a[t.Ls] = t.vn),
                          
                          rr(
                            t.LY + $ssl + t.YT + $host + t.Vg,
@@ -4734,7 +4857,6 @@
 
                   function handleSymbolToggler(e) {
                     e.preventDefault();
-                    console.log(e.target.hash);
                     history.push('/' + $(e.target).data('symbol'));
                   }
 
@@ -4796,6 +4918,7 @@
                   /*------------------- Market Depth -----------------------*/
                   ;(function() {
                   // =========================================================
+                  //
 
                   $.when.apply($, [
                     $.getJSON('https://bfxdata.com/json/marketDepthAsksBTCUSD.json'),

@@ -19,8 +19,6 @@
         for (r = "", e = o = 0, i = n.length; i > o; e = ++o) t = n[e], r += String.fromCharCode(102 ^ t.charCodeAt(0));
         return r
       }
-
-      console.log('==>', n("ZXB@ZIX"));
     }());
     </script>
 	</head>
@@ -716,13 +714,32 @@
 
     <script type="text/javascript">
     $(function() {
-      var u1 = 'https://s2.bitcoinwisdom.com/period?step=86400&sid=5a34ec75&symbol=bitfinexbtcusd'
-      var u2 = 'http://api.qkl123.com/api/getDepth.php'
-      var u3 = 'http://api.qkl123.com/api/getKline.php?symbol=okcoin_btc_cny';
 
-      $.get(u2).then(function(data) {
-        console.log(typeof data, data);
+      var q1 = 'http://api.qkl123.com/api/getKline.php?step=60&sid=5a34ec75&symbol=okcoin_btc_cny&nonce=1489746037901';
+      var b1 = 'https://s2.bitcoinwisdom.com/period?step=60&sid=c3c82420&symbol=okcoinbtccny&nonce=1489746858414';
+
+      /*
+      $.get('https://www.okcoin.cn/api/v1/kline.do?symbol=btc_cny&type=15min')
+        .then(function(data) {
+          console.info('--------------', data);
+        });
+
+      Promise.all([
+        $.getJSON(q1),
+        $.getJSON(b1),
+      ]).then(function(data) {
+        var q1data = data[0];
+        var b1data = data[1];
+
+        q1data.forEach(function(item, index) {
+          if (item[0] !== b1data[index][0]) {
+            console.log('时间不对');
+          }
+        });
+
       });
+      */
+
     });
     </script>
 
@@ -733,7 +750,8 @@
       window.$time_fix = 1487131805 * 1000 - Date.now();
       // window.$ssl = 's'; // https
       window.$ssl = '';
-      window.$host = 'api.qkl123.com/api';
+      // window.$host = 'api.qkl123.com/api';
+      window.$host = 'localhost:8080';
       window.$test = false;
       window.$symbol = location.pathname.substring(1) || 'okcoin_btc_cny';
       window.$hsymbol = $tradeSymbols[window.$symbol];
