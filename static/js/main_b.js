@@ -4925,7 +4925,7 @@
                     $.getJSON('https://bfxdata.com/json/marketDepthBidsBTCUSD.json')
                   ]).done(function(data1, data2) {
 
-                    var data = [data1[0], data2[0]];
+                    var data = [data1[0].slice(0, 190), data2[0].slice(0, 190)];
 
                     ;['asks', 'bids'].forEach(function(key, index) {
                       data[key] = data[index];
@@ -4943,9 +4943,8 @@
                       chart: {
                         type: 'area',
                         backgroundColor: '#000',
+                        margin: [30, -2, 0, -2]
                       },
-
-                      colors: ['#9b0c04', '#33a12a'],
 
                       exporting: {
                         enabled: false
@@ -4959,13 +4958,27 @@
                         text: null
                       },
 
+                      legend: {
+                        verticalAlign: 'top',
+                        itemStyle: {
+                          color: '#999'
+                        },
+                        itemHoverStyle: {
+                          color: '#999'
+                        }
+                      },
+
                       xAxis: {
                         allowDecimals: true,
                         labels: {
                           formatter: function() {
                             return this.value; // clean, unformatted number for year
                           }
-                        }
+                        },
+                        lineColor: 'transparent',
+                        lineWidth: 0,
+                        tickColor: 'transparent',
+                        tickWidth: 0,
                       },
 
                       yAxis: {
@@ -4981,9 +4994,17 @@
                       },
 
                       tooltip: {
-                        pointFormat: '{point.y} XMR at {point.x} BTC'
+                        pointFormat: '{point.y} / {point.x} BTC',
+                        backgroundColor: 'rgba(0, 0, 0, .85)',
+                        borderColor: 'rgba(255, 255, 255, .1)',
+                        borderWidth: 2,
+                        shadow: false,
+                        style: {
+                          color: '#999',
+                        }
                       },
 
+                      /*
                       plotOptions: {
                         area: {
                           marker: {
@@ -4991,11 +5012,43 @@
                           }
                         }
                       },
+                      */
 
                       series: [
-                        { name: '买单', data: data.asks },
-                        { name: '卖单', data: data.bids }
+                        {
+                          name: '买单',
+                          data: data.bids,
+                          color: '#33a12a', // 绿色
+                          // fillOpacity: 1,
+                          // lineColor: '#9b0c04'
+                        },
+                        {
+                          name: '卖单',
+                          data: data.asks,
+                          color: '#9b0c04', // 红色
+                          // fillOpacity: 1,
+                          // lineColor: '#33a12a'
+                        },
                       ],
+
+                      /* 正确
+                      series: [
+                        {
+                          name: '卖单',
+                          data: data.bids,
+                          color: '#9b0c04', // 红色
+                          // fillOpacity: 1,
+                          lineColor: '#9b0c04'
+                        },
+                        {
+                          name: '买单',
+                          data: data.asks,
+                          color: '#33a12a', // 绿色
+                          // fillOpacity: 1,
+                          lineColor: '#33a12a'
+                        },
+                      ],
+                      */
 
                       credits: {
                         enabled: false
