@@ -8,8 +8,9 @@ app.use(express.static(__dirname + '/static'));
 // ======================================
 app.get('/kline', function(req, res) {
   // var url = 'https://s2.bitcoinwisdom.com/period?step=900&sid=596cf1c1&symbol=okcoinbtccny&nonce=1489925744008';
-  var url = 'http://api.qkl123.com/api/getKline.php?symbol=okcoin_btc_cny&step=900';
+  // var url = 'http://api.qkl123.com/api/getKline.php?symbol=okcoin_btc_cny&step=900';
   // var url = 'https://www.okcoin.cn/api/v1/kline.do?symbol=btc_cny&type=15min';
+  var url = 'https://k.sosobtc.com/data/period?symbol=okcoinbtccny&step=900';
 
   axios.get(url)
     .then(function(response) {
@@ -20,6 +21,7 @@ app.get('/kline', function(req, res) {
       data.forEach(function(item) {
 
         // /* qkl123
+        /*
         ret.push([
             item[0],
             null,
@@ -32,6 +34,21 @@ app.get('/kline', function(req, res) {
             null,
             null,
             item[7]*7100 // cny volume
+        ]);
+        */
+
+        ret.push([
+            item[0],
+            null,
+            null,
+            item[1], // open
+            item[4], // close
+            item[2], // high
+            item[3], // low
+            item[5], // btc volume
+            null,
+            null,
+            item[5]*7100 // cny volume
         ]);
 
         /*
