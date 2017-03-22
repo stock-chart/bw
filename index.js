@@ -10,7 +10,7 @@ app.get('/kline', function(req, res) {
   // var url = 'https://s2.bitcoinwisdom.com/period?step=900&sid=596cf1c1&symbol=okcoinbtccny&nonce=1489925744008';
   // var url = 'http://api.qkl123.com/api/getKline.php?symbol=okcoin_btc_cny&step=900';
   // var url = 'https://www.okcoin.cn/api/v1/kline.do?symbol=btc_cny&type=15min';
-  var url = 'https://k.sosobtc.com/data/period?symbol=okcoinbtccny&step=900';
+  var url = 'https://k.sosobtc.com/data/period?symbol=' + req.query.symbol.replace(/_/g, '') + '&step=' + req.query.step;
 
   axios.get(url)
     .then(function(response) {
