@@ -3552,30 +3552,217 @@
                             })
                         }
                         return Dl(wr(Yt(Er[w], _))), ru(t.vS), se = !0,
+
+                            /* TODO: MODIFIED 2017-03-24 */
                             function(n) {
                                 return n = Vr(t.bM),
+
                                     function() {
+
+                                        /*
+                                         * TODO: Highcharts Depth
+                                         */
+                                        function getAsksData(data) {
+                                          var ret = [];
+
+                                          var v1 = data.map(function(item) {
+                                            return Number(item[1]);
+                                          });
+
+                                          /* ---------------------------------------- */
+                                          data.reverse().forEach(function(item, index) {
+                                            ret.push([
+                                              Number(item[0]),
+                                              // Number(item[1])
+                                              index === 0 ? Number(item[1]) :
+                                              v1.slice(0, index+1).reduce(function(a, b) {
+                                                return a + b;
+                                              })
+                                            ]);
+                                          });
+
+                                          return ret;
+                                        }
+
+                                        function getBidsData(data) {
+                                          var ret = [];
+
+                                          var v2 = data.map(function(item) {
+                                            return Number(item[1]);
+                                          });
+
+                                          data.forEach(function(item, index) {
+                                            ret.push([
+                                              Number(item[0]),
+                                              // Number(item[1])
+                                              index === 0 ? Number(item[1]) :
+                                              v2.slice(0, index+1).reduce(function(a, b) {
+                                                return a + b;
+                                              })
+                                            ]);
+                                          });
+
+                                          return ret;
+                                        }
+
+                                        function renderDepth(data1, data2) {
+
+                                          // FIXME: 服务器端返回的`asks`和`bids`可能是刚好相反的
+                                              var $graph = $('#J__market-depth-graph');
+                                              $graph.css('height', $('#J__market-depth').height());
+
+                                              $graph.highcharts({
+                                                chart: {
+                                                  type: 'area',
+                                                  backgroundColor: '#000',
+                                                  margin: [30, -2, 0, -2]
+                                                },
+
+                                                exporting: {
+                                                  enabled: false
+                                                },
+
+                                                title: {
+                                                  text: null
+                                                },
+
+                                                subtitle: {
+                                                  text: null
+                                                },
+
+                                                legend: {
+                                                  verticalAlign: 'top',
+                                                  itemStyle: {
+                                                    color: '#999'
+                                                  },
+                                                  itemHoverStyle: {
+                                                    color: '#999'
+                                                  }
+                                                },
+
+                                                xAxis: {
+                                                  allowDecimals: true,
+                                                  labels: {
+                                                    formatter: function() {
+                                                      return this.value; // clean, unformatted number for year
+                                                    }
+                                                  },
+                                                  lineColor: 'transparent',
+                                                  lineWidth: 0,
+                                                  tickColor: 'transparent',
+                                                  tickWidth: 0,
+                                                },
+
+                                                yAxis: {
+                                                  visible: false,
+                                                  title: {
+                                                    text: null
+                                                  },
+                                                  labels: {
+                                                    formatter: function() {
+                                                      return this.value;
+                                                    }
+                                                  }
+                                                },
+
+                                                tooltip: {
+                                                  useHTML: true,
+                                                  headerFormat: '<div>价格: {point.x}</div>',
+                                                  pointFormat: '<div>委单量: {point.y}</div>',
+                                                  valueDecimals: 4,
+                                                  backgroundColor: 'rgba(0, 0, 0, .85)',
+                                                  borderColor: 'rgba(255, 255, 255, .1)',
+                                                  borderWidth: 2,
+                                                  shadow: false,
+                                                  style: {
+                                                    color: '#999',
+                                                  }
+                                                },
+
+                                                /*
+                                                plotOptions: {
+                                                  area: {
+                                                    marker: {
+                                                      enabled: false
+                                                    }
+                                                  }
+                                                },
+                                                */
+
+                                                series: [
+                                                  {
+                                                    name: '买单',
+                                                    data: getBidsData(data2),
+                                                    color: '#33a12a', // 绿色
+                                                    // fillOpacity: 1,
+                                                    // lineColor: '#9b0c04'
+                                                  },
+                                                  {
+                                                    name: '卖单',
+                                                    data: getAsksData(data1),
+                                                    color: '#9b0c04', // 红色
+                                                    // fillOpacity: 1,
+                                                    // lineColor: '#33a12a'
+                                                  },
+                                                ],
+
+                                                credits: {
+                                                  enabled: false
+                                                }
+
+                                              });
+
+                                              window.$_qkl123_depth_$ = $graph.highcharts();
+                                        }
+                                        /* END: Depth */
+
                                         function e() {
-                                            rr(o, function() {
+                                            rr(o/* o: http://api.qkl123.com/api/getDepth.php?symbol=okcoin_btc_cny&sid=5a34ec75 */, function() {
+
                                                 function r() {
-                                                    (null != Qu ? Qu[t.ot] : void 0) && ne.push({
+
+                                                    if (Qu && Qu[t.ot]) {
+
+                                                      if (!window.$_qkl123_depth_$) {
+                                                        renderDepth(Qu[t.ot]['asks'], Qu[t.ot]['bids']);
+                                                      } else {
+                                                        window.$_qkl123_depth_$.series[0].setData(getBidsData(Qu[t.ot]['bids']),true);
+                                                        window.$_qkl123_depth_$.series[1].setData(getAsksData(Qu[t.ot]['asks']),true);
+                                                      }
+                                                    }
+
+                                                    // Qu: API返回的`res`对象, Qu[t.ot]: res.data
+                                                    // ne: []
+                                                    // t.Vi: 'depth'
+                                                    (null != Qu ? Qu[t.ot] : void 0) &&
+                                                      
+                                                    ne.push({
                                                         type: t.Vi,
                                                         depth: Qu
-                                                    }), bo && pe ? Kr(6e4, function(n) {
+                                                    }),
+                                                    
+                                                    bo && pe ? Kr(6e4, function(n) {
                                                         e(n)
                                                     }) : Kr(No, function(n) {
                                                         e(n)
                                                     })
                                                 }
+
                                                 Qi = arguments[0], Qu = arguments[1], Qi ? (n(t.Uv), Kr(15e3, function() {
                                                     return e()
                                                 })) : r()
                                             })
                                         }
+
                                         var r, o, i;
+
                                         i = t.LY + $ssl + t.YT + $host + t.DA + $symbol + t.er + $sid, o = i, r = t.BV, e()
-                                    }(), null
+                                    }(),
+                                    
+                                    null
                             }(ru),
+                            /* END: MODIFIED 2017-03-24 */
+
                             function() {
                                 function n() {
                                     function n() {
@@ -4915,153 +5102,6 @@
                   }
 
 
-                  /*------------------- Market Depth -----------------------*/
-                  ;(function() {
-                  // =========================================================
-                  //
-
-                  $.when.apply($, [
-                    $.getJSON('https://bfxdata.com/json/marketDepthAsksBTCUSD.json'),
-                    $.getJSON('https://bfxdata.com/json/marketDepthBidsBTCUSD.json')
-                  ]).done(function(data1, data2) {
-
-                    var data = [data1[0].slice(0, 190), data2[0].slice(0, 190)];
-
-                    ;['asks', 'bids'].forEach(function(key, index) {
-                      data[key] = data[index];
-
-                      data[key].forEach(function(pair) {
-                        pair[0] = Number(pair[0]);
-                        pair[1] = Number(pair[1]);
-                      });
-                    });
-
-                    var $graph = $('#J__market-depth-graph');
-                    $graph.css('height', $('#J__market-depth').height());
-
-                    $graph.highcharts({
-                      chart: {
-                        type: 'area',
-                        backgroundColor: '#000',
-                        margin: [30, -2, 0, -2]
-                      },
-
-                      exporting: {
-                        enabled: false
-                      },
-
-                      title: {
-                        text: null
-                      },
-
-                      subtitle: {
-                        text: null
-                      },
-
-                      legend: {
-                        verticalAlign: 'top',
-                        itemStyle: {
-                          color: '#999'
-                        },
-                        itemHoverStyle: {
-                          color: '#999'
-                        }
-                      },
-
-                      xAxis: {
-                        allowDecimals: true,
-                        labels: {
-                          formatter: function() {
-                            return this.value; // clean, unformatted number for year
-                          }
-                        },
-                        lineColor: 'transparent',
-                        lineWidth: 0,
-                        tickColor: 'transparent',
-                        tickWidth: 0,
-                      },
-
-                      yAxis: {
-                        visible: false,
-                        title: {
-                          text: null
-                        },
-                        labels: {
-                          formatter: function() {
-                            return this.value;
-                          }
-                        }
-                      },
-
-                      tooltip: {
-                        pointFormat: '{point.y} / {point.x} BTC',
-                        backgroundColor: 'rgba(0, 0, 0, .85)',
-                        borderColor: 'rgba(255, 255, 255, .1)',
-                        borderWidth: 2,
-                        shadow: false,
-                        style: {
-                          color: '#999',
-                        }
-                      },
-
-                      /*
-                      plotOptions: {
-                        area: {
-                          marker: {
-                            enabled: false
-                          }
-                        }
-                      },
-                      */
-
-                      series: [
-                        {
-                          name: '买单',
-                          data: data.bids,
-                          color: '#33a12a', // 绿色
-                          // fillOpacity: 1,
-                          // lineColor: '#9b0c04'
-                        },
-                        {
-                          name: '卖单',
-                          data: data.asks,
-                          color: '#9b0c04', // 红色
-                          // fillOpacity: 1,
-                          // lineColor: '#33a12a'
-                        },
-                      ],
-
-                      /* 正确
-                      series: [
-                        {
-                          name: '卖单',
-                          data: data.bids,
-                          color: '#9b0c04', // 红色
-                          // fillOpacity: 1,
-                          lineColor: '#9b0c04'
-                        },
-                        {
-                          name: '买单',
-                          data: data.asks,
-                          color: '#33a12a', // 绿色
-                          // fillOpacity: 1,
-                          lineColor: '#33a12a'
-                        },
-                      ],
-                      */
-
-                      credits: {
-                        enabled: false
-                      }
-
-                    });
-
-                  });
-
-
-                  // =========================================================
-                  }());
-                  /*------------------- Market Depth -----------------------*/
 
 
                 /* --------------/qkl123------------------------*/
