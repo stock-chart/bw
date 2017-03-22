@@ -5021,7 +5021,8 @@
 
                   history
                     .listen(function(location, action) {
-                      console.info(location, location.path);
+                      /* TODO: 更新K线数据 */
+                      window.location.reload();
                     });
 
                   $symbolToggler
@@ -5087,7 +5088,7 @@
 
                     var $this = $(e.currentTarget);
                     var $parent = $this.parent('li');
-                    var target = $this.attr('href');
+                    var target = $this.data('target');
 
                     $parent
                       .siblings('li')

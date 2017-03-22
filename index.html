@@ -550,11 +550,11 @@
       <!-- userbar -->
       <div id="J__userbar" class="userbar">
         <ul class="list-unstyled">
-          <li><a href="#J__user" data-toggle="tab"><span class="fa fa-user-circle-o"></span></a></li>
-          <li class="active"><a href="#J__trades" data-toggle="tab"><span class="fa fa-list-ol"></span></a></li>
-          <li><a href="#J__alert" data-toggle="tab"><span class="fa fa-bell-o"></span></a></li>
-          <li><a href="#J__feeds" data-toggle="tab"><span class="fa fa-newspaper-o"></span></a></li>
-          <li><a href="#J__chat" data-toggle="tab"><span class="fa fa-commenting"></span></a></li>
+          <li><a href="javascript:;" data-toggle="tab" data-target="#J__user"><span class="fa fa-user-circle-o"></span></a></li>
+          <li class="active"><a href="javascript:;" data-toggle="tab" data-target="#J__trades"><span class="fa fa-list-ol"></span></a></li>
+          <li><a href="javascript:;" data-toggle="tab" data-target="#J__alert"><span class="fa fa-bell-o"></span></a></li>
+          <li><a href="javascript:;" data-toggle="tab" data-target="#J__feeds"><span class="fa fa-newspaper-o"></span></a></li>
+          <li><a href="javascript:;" data-toggle="tab" data-target="#J__chat"><span class="fa fa-commenting"></span></a></li>
         </ul>
       </div>
       <!-- /userbar -->
@@ -758,8 +758,8 @@
       window.$theme_name = 'dark';
       window.$debug = false;
       window.$p = false;
-      window.$c_usdcny = 6.8648;
-      window.$init_price = 0.00950;
+      window.$c_usdcny = 6.8648; // TODO
+      window.$init_price = 1; // TODO
       setTimeout(function() {
         if (!window.$script_loaded) {
           return document.getElementById('loading').innerHTML = '<div class="inner">加载资源, 可能需要几秒种时间.</div>';
