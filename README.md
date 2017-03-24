@@ -146,3 +146,4 @@ API: /trade
     type: "trades"
   }
   ```
+

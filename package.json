@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon ./lib/server.js"
+  },
   "dependencies": {
     "axios": "^0.15.3",
     "express": "^4.14.1",
