@@ -260,8 +260,8 @@
             WE: "Buy <span class=yellow>",
             fX: "#slot_hash_rate",
 
-            Vg: "/getKline.php",
-            // Vg: "/kline",
+            // Vg: "/getKline.php",
+            Vg: "/period",
 
             ZD: "getDate",
             Ve: "input[name=",
