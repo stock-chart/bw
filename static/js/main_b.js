@@ -442,7 +442,10 @@
             RL: "selected",
             mM: "createGain",
             kY: ".rt",
-            GX: "/getTrades.php",
+
+            // GX: "/getTrades.php",
+            GX: "/trades",
+
             OM: "change",
             Ml: "button",
             Px: "#depth",
@@ -720,7 +723,10 @@
             HF: "#notify",
             YM: ".content_",
             mY: "success",
-            DA: "/getDepth.php?symbol=",
+
+            // DA: "/getDepth.php?symbol=",
+            DA: "/depth?symbol=",
+
             Mu: "ticker_red",
             Os: "kdj_params",
             wz: " grey",
@@ -3570,7 +3576,7 @@
                                           });
 
                                           /* ---------------------------------------- */
-                                          data.reverse().forEach(function(item, index) {
+                                          data.forEach(function(item, index) {
                                             ret.push([
                                               Number(item[0]),
                                               // Number(item[1])

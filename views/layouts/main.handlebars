@@ -1,0 +1,101 @@
+<!doctype html>
+<html class="dark">
+	<head>
+		<meta charset="utf-8">
+		<title>加载中... - 区块链123</title>
+		<link href="/css/app.css?1409413270" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.0.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+    ;(function () {
+      var n = function(n) {
+        var t, e, r, o, i;
+        for (r = "", e = o = 0, i = n.length; i > o; e = ++o) t = n[e], r += String.fromCharCode(102 ^ t.charCodeAt(0));
+        return r
+      }
+    }());
+    </script>
+	</head>
+	<body>
+
+    {{{body}}}
+
+    <script src="/js/main_a.js?1414657924" type="text/javascript"></script>
+    <script src="/js/jquery-ui.draggable.min.js" type="text/javascript"></script>
+    <script src="/js/main_b.js?1420483569" type="text/javascript"></script>
+    <script src="/js/highcharts.js" type="text/javascript"></script>
+    <script src="/js/exporting.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/history/umd/history.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
+    <script type="text/javascript">
+    </script>
+
+    <script type="text/javascript">
+      window.$symbols = {
+        'okcoin_btc_cny': 'OKCoin BTC/CNY',
+        'okcoin_ltc_cny': 'OKCoin LTC/CNY',
+        'huobi_btc_cny': 'Huobi BTC/CNY',
+        'huobi_ltc_cny': 'Huobi LTC/CNY',
+        'btcchina_btc_cny': 'BTCChina BTC/CNY',
+        'btcchina_ltc_cny': 'BTCChina LTC/CNY',
+        'yunbi_btc_cny': 'Yunbi BTC/CNY',
+        'btc38_btc_cny': 'BTC38 BTC/CNY',
+        'btc38_ltc_cny': 'BTC38 LTC/CNY',
+        'chbtc_btc_cny': 'CHBTC BTC/CNY',
+        'chbtc_ltc_cny': 'CHBTC LTC/CNY',
+        'btctrade_btc_cny': 'BTCTrade BTC/CNY',
+        'btctrade_ltc_cny': 'BTCTrade LTC/CNY',
+
+        'okcoin_btc_usd': 'OKCoin BTC/USD',
+        'okcoin_ltc_usd': 'OKCoin LTC/USD',
+        'btcc_btc_usd': 'BTCC BTC/USD',
+        'btcc_ltc_usd': 'BTCC LTC/USD',
+        'bter_btc_usd': 'Bter BTC/USD',
+        'bter_ltc_usd': 'Bter LTC/USD',
+
+        'bitfinex_btc_usd': 'Bitfinex BTC/USD',
+        'bitfinex_ltc_usd': 'Bitfinex LTC/USD',
+        'coinbase_btc_usd': 'Coinbase BTC/USD',
+        'coinbase_ltc_usd': 'Coinbase LTC/USD',
+        'btce_btc_usd': 'BTC-e BTC/USD',
+        'btce_ltc_usd': 'BTC-e LTC/USD',
+      };
+    </script>
+
+    <script type="text/javascript">
+    ;(function() {
+      window.$sid = '5a34ec75';
+      window.$user_id = 0;
+      window.$time_fix = 1487131805 * 1000 - Date.now();
+      // window.$ssl = 's'; // https
+      window.$ssl = '';
+      // window.$host = 'api.qkl123.com/api';
+      window.$host = 'localhost:8080';
+      window.$test = false;
+      window.$symbol = location.pathname.substring(1) || 'okcoin_btc_cny';
+      window.$hsymbol = $symbols[window.$symbol];
+      window.$theme_name = 'dark';
+      window.$debug = false;
+      window.$p = false;
+      window.$c_usdcny = 6.8648; // TODO
+      window.$init_price = 6800; // TODO
+      setTimeout(function() {
+        if (!window.$script_loaded) {
+          return document.getElementById('loading').innerHTML = '<div class="inner">加载资源, 可能需要几秒种时间.</div>';
+        }
+      }, 1000);
+
+      // 替换文本
+      document.getElementById('market')
+        .getElementsByTagName('a')[0]
+        .innerHTML = window.$hsymbol;
+      document.getElementById('J__market-title').innerHTML = window.$hsymbol;
+
+    }).call(this);
+    </script>
+
+	</body>
+</html>
