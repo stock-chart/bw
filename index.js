@@ -32,12 +32,12 @@ app.use('/depth', depth)
 app.use('/trades', trades)
 
 // entry
-app.get('*', function(req, res) {
-  var host = req.headers.host
-  var referer = req.headers.referer
-  var reg = new RegExp('(?:http(?:s)?://' + host + ')\/(.*)')
-  
-  axios.get(BASE_URL + '/ticker?symbol=' + referer.match(reg)[1])
+app.get('/', function(req, res) {
+  res.redirect('/okcoin_btc_cny')
+})
+
+app.get(/.+_(btc|ltc)_(usd|cny)/, function(req, res) {
+  axios.get(BASE_URL + '/ticker?symbol=' + req.path.split('/')[1])
   .then(function(response) {
     res.render('index', {
       price: response.data.last
