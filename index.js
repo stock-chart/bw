@@ -1,4 +1,5 @@
 var express = require('express')
+var cors = require('cors')
 var path = require('path')
 var favicon = require('serve-favicon')
 var logger = require('morgan')
@@ -21,6 +22,7 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'handlebars')
 
 // app.use(favicon())
+app.use(cors())
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
