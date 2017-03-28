@@ -1074,6 +1074,7 @@
             function() {
 
                 /* TODO: WebSocket */
+                /*
                 return er = function(n, e) {
                     var r, o, i;
                     return typeof n === t.lB && (n = [n]), o = 0, (i = function() {
@@ -1115,9 +1116,15 @@
                         }))
                     }
                 },
-                /* TODO: WebSocket */
 
                 er = er
+                */
+
+                /* MODIFIED: 添加一个空函数 */
+                return er = function() {}
+                /* END */
+
+                /* TODO: WebSocket */
             }(), r = n = e = null, zt = re = At = jt = Gt = oe = te = qt = St = Zt = Pt = Ht = Lt = Jt = It = Ot = Rt = Xt = _t = Et = Nt = Ut = Bt = Wt = Ct = Mt = Dt = ne = Yt = Qt = Kt = ee = null,
             function() {
                 function o(n) {
