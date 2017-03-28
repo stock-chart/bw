@@ -661,7 +661,7 @@
             oU: "base",
             bN: "#drawings",
             ZC: "getYear",
-            Xs: "http#{$ssl}://#{decided_host}/#{path}  localhost:8080:21:7",
+            Xs: "http#{$ssl}://#{decided_host}/#{path}  104.207.134.189:21:7",
             EA: ":alarm:low",
             MV: "drawing_get_all",
             Xa: "\"",
