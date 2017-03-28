@@ -33,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'static')))
 app.use('/period', period)
 app.use('/depth', depth)
 app.use('/trades', trades)
+app.use('/ticker', ticker)
 
 // entry
 app.get('/', function(req, res) {
