@@ -3774,7 +3774,14 @@
                                     function n() {
                                         function i() {
                                             function i() {
-                                                o = t.LY + $ssl + t.YT + $host + t.Uu + $symbol + t.er + $sid, o += t.KR, rr(o, function() {
+                                                /* TODO: MODIFIED 删除`sdepth`请求 */
+                                                /*
+                                                o = t.LY + $ssl + t.YT + $host + t.Uu + $symbol + t.er + $sid,
+
+                                                o += t.KR,
+
+                                                rr(o, function() {
+
                                                     function o() {
                                                         function o() {
                                                             function e() {
@@ -3801,6 +3808,8 @@
                                                         return e > 3 && (e = 3), n()
                                                     })) : o()
                                                 })
+                                                */
+                                                /* END */
                                             }
                                             oe ? Kr(1e3, function() {
                                                 return n()
@@ -4118,7 +4127,8 @@
                             43200: t.Oj,
                             86400: t.jW,
                             259200: t.xw,
-                            604800: "1周"
+                            604800: "周线",
+                            2592000: "月线"
                         }, nl = {};
                     for (ji in qu) so.call(qu, ji) && (ol = qu[ji], nl[ol] = ji);
                     for (we = {}, po = null, pa = $(t.OR, Hu), ca = 0, fa = pa.length; fa > ca; ca++) tu = pa[ca], tu = $(tu), (Gu = nl[tu.text()]) && (we[Gu] = tu, function(n, e) {

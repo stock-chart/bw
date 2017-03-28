@@ -15,9 +15,7 @@ router.get('/', function(req, res) {
     '&sid=5a34ec75'
   )
   .then(function(response) {
-    var data = response.data
-
-    res.json(data)
+    res.json(response.data)
   }, function(error) {
     res.json({
       status: 'failure',

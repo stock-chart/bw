@@ -11,6 +11,7 @@ var axios = require('axios')
 var period = require('./api/period')
 var depth = require('./api/depth')
 var trades = require('./api/trades')
+var ticker = require('./api/ticker')
 
 var BASE_URL = require('./lib/baseUrl')
 
