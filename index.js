@@ -63,7 +63,13 @@ app.use(function(err, req, res, next) {
   res.render('error')
 })
 
-var PORT = 8080
+var PORT
+
+if (process.env.NODE_ENV === 'production') {
+  PORT = 80
+} else {
+  PORT = 8080
+}
 
 app.listen(PORT, function() {
   console.log('Server running on http://127.0.0.1:' + PORT)
