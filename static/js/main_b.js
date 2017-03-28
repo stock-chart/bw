@@ -2422,11 +2422,16 @@
                 var n, e, r, o, i, u;
                 $(function() {
                     function l() {
+
+                        /* MODIFIED: 删除难度接口 */
+                        /*
                         Kr(6e4, function() {
                             rr(t.LY + $ssl + t.YT + $host + t.QD + n, function() {
                                 r = arguments[0], e = arguments[1], !r && (null != e ? e.ok : void 0) ? (o.text(e.difficulty), u.text(e.hash_rate_504), l(i.text(e.estimated))) : l()
                             })
                         })
+                        */
+                        /* END */
                     }
                     n = -1 !== $symbol.indexOf(t.tT) ? t.Sa : t.OO, o = $(t.tK), i = $(t.RX), u = $(t.fX), l()
                 })
