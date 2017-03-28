@@ -5,10 +5,13 @@ var logger = require('morgan')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
 var exphbs  = require('express-handlebars')
+var axios = require('axios')
 
 var period = require('./api/period')
 var depth = require('./api/depth')
 var trades = require('./api/trades')
+
+var BASE_URL = require('./lib/baseUrl')
 
 var app = express()
 
@@ -30,7 +33,16 @@ app.use('/trades', trades)
 
 // entry
 app.get('*', function(req, res) {
-  res.render('index')
+  var host = req.headers.host
+  var referer = req.headers.referer
+  var reg = new RegExp('(?:http(?:s)?://' + host + ')\/(.*)')
+  
+  axios.get(BASE_URL + '/ticker?symbol=' + referer.match(reg)[1])
+  .then(function(response) {
+    res.render('index', {
+      price: response.data.last
+    })
+  })
 })
 
 // catch 404 and forward to error handler

@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
 
   axios.get(
     BASE_URL + '/depth?' +
-    'symbol=' + query.symbol.replace(/_/g, '') +
+    'symbol=' + query.symbol +
     '&nonce=' + Date.now() +
     '&sid=5a34ec75'
   )

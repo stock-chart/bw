@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
   // FIXME: query.since === NaN
   axios.get(
     BASE_URL + '/trades?' +
-    'symbol=' + query.symbol.replace(/_/g, '') +
+    'symbol=' + query.symbol +
     '&nonce=' + Date.now() +
     (!isNaN(query.since) ? '&since=' + query.since : '') +
     '&sid=5a34ec75'

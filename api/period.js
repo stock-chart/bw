@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
 
   axios.get(
     BASE_URL + '/period?' +
-    'symbol=' + query.symbol.replace(/_/g, '') +
+    'symbol=' + query.symbol +
     '&step=' + query.step +
     '&nonce=' + Date.now() +
     '&sid=5a34ec75'

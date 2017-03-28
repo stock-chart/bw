@@ -3576,7 +3576,7 @@
                                           });
 
                                           /* ---------------------------------------- */
-                                          data.forEach(function(item, index) {
+                                          data.reverse().forEach(function(item, index) {
                                             ret.push([
                                               Number(item[0]),
                                               // Number(item[1])
