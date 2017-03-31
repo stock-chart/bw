@@ -12,6 +12,7 @@ var period = require('./api/period')
 var depth = require('./api/depth')
 var trades = require('./api/trades')
 var ticker = require('./api/ticker')
+var news = require('./api/news')
 
 var BASE_URL = require('./lib/baseUrl')
 
@@ -34,6 +35,7 @@ app.use('/period', period)
 app.use('/depth', depth)
 app.use('/trades', trades)
 app.use('/ticker', ticker)
+app.use('/news', news)
 
 // entry
 app.get('/', function(req, res) {

@@ -16,6 +16,8 @@
     "highcharts": "^5.0.7",
     "mongoose": "^4.9.2",
     "morgan": "^1.8.1",
+    "node-feedparser": "^1.0.1",
+    "request": "^2.81.0",
     "serve-favicon": "^2.4.1"
   }
 }

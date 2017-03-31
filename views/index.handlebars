@@ -492,8 +492,17 @@
 
         <!-- #J__feeds -->
         <div class="tab-panel" data-panel="#J__feeds">
-          feeds...
+          <div style="text-align: center; padding-top: 20px; color: yellow;">正在加载...</div>
         </div>
+        <script type="text/template" id="J__feeds-tpl">
+          <ul class="feed-list">
+            <% _.each(feeds, function(feed) { %>
+              <li>
+                <a href="<%= feed.link %>" target="_blank" title="<%= feed.title %>"><%= feed.title %></a>
+              </li>
+            <% }) %>
+          </ul>
+        </script>
         <!-- /#J__feeds -->
 
         <!-- #J__chat -->

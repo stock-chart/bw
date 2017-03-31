@@ -5108,6 +5108,7 @@
                     var marginLeft = $drawlinePanel.hasClass('active') ? $drawlinePanel.width() : 0;
                     $container.css('margin-left', marginLeft);
 
+                    // TODO: 打开画线工具
                     Eu.trigger('resize');
                   }
 
@@ -5117,6 +5118,14 @@
                     var $this = $(e.currentTarget);
                     var $parent = $this.parent('li');
                     var target = $this.data('target');
+
+                    if (target.indexOf('feeds') > -1) {
+                      $.get('/news').then(function(res) {
+                        var tpl = window._.template($('#J__feeds-tpl').html());
+                        var rslt = tpl({ feeds: res });
+                        $('[data-panel="' + target +'"]').html(rslt);
+                      });
+                    }
 
                     $parent
                       .siblings('li')
