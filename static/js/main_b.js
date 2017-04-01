@@ -29,7 +29,7 @@
             Iz: n("F"), // ""
             NX: "barWidth",
             SC: "rgba(64,255,64,0.3)",
-            Uv: "fetch depth failed",
+            Uv: "获取深度数据失败",
             vo: "getFullYear",
             kP: "getUTC",
             jx: "亿",
@@ -3588,7 +3588,7 @@
                                           });
 
                                           /* ---------------------------------------- */
-                                          data.reverse().forEach(function(item, index) {
+                                          data.forEach(function(item, index) {
                                             ret.push([
                                               Number(item[0]),
                                               // Number(item[1])
