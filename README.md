@@ -147,3 +147,86 @@ API: /trade
   }
   ```
 
+## 预警
+
+- 选择交易所
+  * okcoin
+    - okcoin_btc_cny
+    - okcoin_ltc_cny
+  * huobi
+    - huobi_btc_cny
+    - huobi_ltc_cny
+  * btcc
+    - btcc_btc_cny
+    - btcc_ltc_cny
+  * yunbi
+    - yunbi_btc_cny
+    - yunbi_eth_cny
+- 选择币种
+- 选择更新间隔
+  * 1s
+  * 2s
+  * 5s
+  * 60s
+
+- localStorage
+  * exchange: poloniex
+  * symbol: poloniex_dcr_btc
+
+```js
+// 本地数据
+const INITIAL_STATS = {
+  alertList: [
+    {
+      symbol: 'poloniex_btc_usd',
+      type: 'lt'
+    },
+    {
+      symbol: 'bitfinex_eth_btc',
+      type: 'gt'
+    }
+  ],
+  duration: '3s'
+}
+
+var duration = INITIAL_STATS.duration
+
+// ============================================================================
+
+// 前端轮询
+var intervalId = setInterval(function() {
+
+  // "更新时间间隔"改变
+  if (duration !== INITIAL_STATS.duration) {
+    duration = INITIAL_STATS.duration
+    intervalId = null
+  }
+  
+  $.get(`/ticker`, {
+    symbols: ['poloniex_btc_cny', 'poloniex_dcr_btc', 'bitfinex_eth_usd']
+  })
+  .then(function(res) {
+    res.data.forEach(function(item) {
+      // TODO
+    })
+  })
+}.bind(this), duration)
+
+// ============================================================================
+
+// 后端API
+router.get('/', function(req, res) {
+  var symbols = req.body.symbols
+  
+  Promise.all(symbols.map(function(symbol) {
+    request(`${BASE_URL}/ticker?symbol=${symbol}`)
+  })).then(function(data) {
+    var ret = {}
+    data.map(function(item) {
+      ret[item.symbol] = item.last
+    })
+    
+    res.json(ret)
+  })
+})
+```
