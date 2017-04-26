@@ -58,7 +58,7 @@
     ;(function() {
       window.$sid = '5a34ec75';
       window.$user_id = 0;
-      window.$time_fix = 1487131805 * 1000 - Date.now();
+      window.$time_fix = -1000; // 1487131805 * 1000 - Date.now();
       // window.$ssl = 's'; // https
       window.$ssl = '';
       // window.$host = 'api.qkl123.com/api';
@@ -87,10 +87,10 @@
     }).call(this);
     </script>
 
-    <script src="/js/main_a.js?1414657924" type="text/javascript"></script>
+    <script src="/js/main_a.js?{{timestamp}}" type="text/javascript"></script>
     <script src="/js/jquery-ui.draggable.min.js" type="text/javascript"></script>
     <script src="/js/underscore.min.js" type="text/javascript"></script>
-    <script src="/js/main_b.js?1420483569" type="text/javascript"></script>
+    <script src="/js/main_b.js?{{timestamp}}" type="text/javascript"></script>
     <script src="/js/highcharts.js" type="text/javascript"></script>
     <script type="text/javascript">;(function(H){H.seriesTypes.line.prototype.requireSorting=false})(Highcharts)</script>
     <script src="/js/exporting.js" type="text/javascript"></script>

@@ -46,7 +46,8 @@ app.get(/.+_(btc|ltc)_(usd|cny)/, function(req, res) {
   axios.get(BASE_URL + '/ticker?symbol=' + req.path.split('/')[1])
   .then(function(response) {
     res.render('index', {
-      price: response.data.last
+      price: response.data.last,
+      timestamp: Date.now()
     })
   })
 })
