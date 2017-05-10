@@ -10,9 +10,9 @@ router.get('/', function(req, res) {
   axios.get(
     BASE_URL + '/trades?' +
     'symbol=' + query.symbol +
-    '&nonce=' + Date.now() +
-    (!isNaN(query.since) ? '&since=' + query.since : '') +
-    '&sid=5a34ec75'
+    '&nonce=' + query.nonce +
+    '&since=' + query.since +
+    '&sid=' + query.sid
   )
   .then(function(response) {
     res.json(response.data)
